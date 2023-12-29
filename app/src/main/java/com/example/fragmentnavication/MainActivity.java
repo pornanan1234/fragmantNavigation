@@ -17,27 +17,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        firstFragmentBtn = findViewById(R.id.frameLayout1btn);
-        secondFragmentBtn = findViewById(R.id.frameLayout2btn);
-
-        firstFragmentBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                replaceFragment(new fragment1());
-            }
-        });
-
-
-        secondFragmentBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                replaceFragment(new fragment2());
-
-            }
-        });
+        replaceFragment(new fragment1());
     }
     private void replaceFragment(Fragment fragment){
 
