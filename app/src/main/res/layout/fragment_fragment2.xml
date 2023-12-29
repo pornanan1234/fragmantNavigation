@@ -35,6 +35,63 @@
         android:textColor="@color/black"
         android:textSize="20sp" />
 
+    <TextView
+        android:id="@+id/ApplicationText"
+        android:layout_width="296dp"
+        android:layout_height="131dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="578dp"
+        android:fontFamily="@font/baloo_bhai_2_extrabold"
+        android:text="Brief Introduction"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="30sp" />
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="353dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="-165dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="330dp"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="@string/intro_page_two_head"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="353dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="480dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginBottom="77dp"
+        android:fontFamily="@font/baloo_bhai_2"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="@string/intro_page_two_superposition"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="18sp" />
+
     <Button
         android:id="@+id/fragment2toNext"
         android:layout_width="150dp"
@@ -51,4 +108,37 @@
         android:text="@string/next"
         android:textColor="@color/black"
         android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="353dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="-94dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="259dp"
+        android:fontFamily="@font/baloo_bhai_2_extrabold"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="@string/superposition"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="303dp"
+        android:layout_height="439dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="105dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="186dp"
+        android:src="@drawable/image_2" />
 </RelativeLayout>

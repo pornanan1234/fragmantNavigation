@@ -18,18 +18,19 @@
     <string name="previous">
          "&lt; Previous"
     </string>
-    <string name="intro_page_one_one">
-    "Quantum physics is the study of \n matter and energy at an atomic and subatomic level."
-    </string>
-    <string name="intro_page_one_two">
-    "Apparently, objects at a macroscopic level and fundamental level do act differently. \n\n"
-    "The understanding of these unique characteristics can then be applied \n to develop our pre-existing technology and methods. \n\n"
-    </string>
-    <string name="next">
-        "Next >"
-    </string>
-    <string name="previous">
-         "&lt; Previous"
-    </string>
+    <string name="superposition">1. SUPERPOSITION:</string>
+<string name="intro_page_two_head">Some essential concepts related to quantum physics include:
+</string>
+    <string name="intro_page_two_superposition">
+        "Quantum particles can be in different states at the same time.\n\n This characteristic is extremely useful for quantum computers.\n
 
+    </string>
+    <string name="intro_page_two_superposition_2">
+    A quantum computer contains qubits (quantum bits) which represent both binary values (0 and 1) at the same time, \n
+    </string>
+    <string name = "intro_page_two_superposition_3">
+    allowing certain processes to be done much faster in quantum computers \n
+    compared to classic computers. \n\n
+        (Classic bits can only store either 0 or 1 at a certain time.)"
+    </string>
 </resources>
