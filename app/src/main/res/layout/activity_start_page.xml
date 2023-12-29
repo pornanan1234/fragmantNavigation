@@ -8,22 +8,6 @@
     tools:context=".StartPage">
 
     <TextView
-        android:id="@+id/projectText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:fontFamily="@font/baloo_bhai_2_extrabold"
-        android:text="Science Project 2023"
-        android:textColor="#03A9F4"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.655" />
-
-    <TextView
         android:id="@+id/ApplicationText"
         android:layout_width="348dp"
         android:layout_height="155dp"
@@ -39,16 +23,35 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="1.0" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="133dp"
-        android:layout_height="133dp"
+    <TextView
+        android:id="@+id/projectText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/baloo_bhai_2_extrabold"
+        android:text="Science Project 2023"
+        android:textColor="#03A9F4"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.624" />
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="215dp"
+        android:layout_height="65dp"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:onClick="LaunchHomeScreen"
+        android:text="Let's Start!"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.448"
-        app:srcCompat="@drawable/quantum_computing" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.608" />
 
     <TextView
         android:id="@+id/PresentbyText"
@@ -63,13 +66,13 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.801" />
+        app:layout_constraintVertical_bias="0.787" />
 
     <TextView
         android:id="@+id/UserNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="24dp"
         android:fontFamily="@font/baloo_bhai_2_semibold"
         android:text="Napat Worrasangasilp IP11"
         android:textColor="#A3ACAC"
@@ -78,18 +81,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/startButton"
-        android:layout_width="215dp"
-        android:layout_height="65dp"
-        android:fontFamily="@font/baloo_bhai_2_semibold"
-        android:onClick="LaunchHomeScreen"
-        android:text="Let's Start!"
-        android:textSize="24sp"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="133dp"
+        android:layout_height="133dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.645" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.421"
+        app:srcCompat="@drawable/quantum_computing" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

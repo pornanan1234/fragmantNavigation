@@ -19,6 +19,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class fragment1 extends Fragment {
 
+
     View view;
     Button nextBtn;
 
@@ -153,6 +154,7 @@ public class fragment1 extends Fragment {
             // user clicks on the shrinked
             // parent FAB
             mAddFab.extend();
+            view.findViewById(R.id.fragment1toNext).setVisibility(View.GONE);
             // make the boolean variable true as
             // we have set the sub FABs
             // visibility to GONE
@@ -175,6 +177,8 @@ public class fragment1 extends Fragment {
             // Set the FAB to shrink after user
             // closes all the sub FABs
             mAddFab.shrink();
+            view.findViewById(R.id.fragment1toNext).setVisibility(View.VISIBLE);
+
             // make the boolean variable false
             // as we have set the sub FABs
             // visibility to GONE
@@ -182,7 +186,10 @@ public class fragment1 extends Fragment {
         }
     }
 
+
+
     public void LaunchShorFragment() {
         replaceFragment(new shorFragment1());
     }
 }
+
