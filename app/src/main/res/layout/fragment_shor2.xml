@@ -3,26 +3,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/green"
-    tools:context=".fragment1">
+    android:background="@color/white"
+    tools:context=".shorFragment2">
 
     <include layout="@layout/floatbutton"/>
     <!-- TODO: Update blank fragment layout -->
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Introduction 1"
+        android:text="Shor 2"
+        android:textColor="@color/black"
         android:textSize="32dp" />
 
     <Button
-        android:id="@+id/fragment1toNext"
+        android:id="@+id/shorfragment2toPrevious"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="50dp"
+        android:text="Shor 1" />
+
+    <Button
+        android:id="@+id/shorfragment2toNext"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="50dp"
-        android:text="Fragment 2" />
+        android:text="shor 3" />
 </RelativeLayout>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/white"
+    tools:ignore="HardcodedText">
+
+
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/add_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="19dp"
+        android:backgroundTint="@color/black"
+        android:fontFamily="@font/baloo_bhai_2_extrabold"
+        android:text="Directory"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:icon="@drawable/baseline_add_24"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/direct_to_home_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/black"
+        android:contentDescription="hi"
+        app:fabSize="normal"
+        app:layout_constraintStart_toStartOf="@+id/add_fab"
+        app:layout_constraintTop_toBottomOf="@+id/add_fab"
+        app:srcCompat="@drawable/baseline_add_24"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/direct_to_home_action_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:text="Return to Information Page"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/direct_to_home_fab"
+        app:layout_constraintTop_toBottomOf="@+id/add_fab" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/direct_to_defense_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/black"
+        android:contentDescription="@string/app_name"
+        app:fabSize="normal"
+        app:layout_constraintStart_toStartOf="@+id/add_fab"
+        app:layout_constraintTop_toBottomOf="@+id/direct_to_home_fab"
+        app:srcCompat="@drawable/baseline_add_24"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/direct_to_defense_action_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="104dp"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:text="Defender's Perspective"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/direct_to_defense_fab"
+        app:layout_constraintTop_toBottomOf="@+id/add_fab" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/direct_to_attack_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/black"
+        android:contentDescription="@string/app_name"
+        app:fabSize="normal"
+        app:layout_constraintStart_toStartOf="@+id/add_fab"
+        app:layout_constraintTop_toBottomOf="@+id/direct_to_defense_fab"
+        app:srcCompat="@drawable/baseline_add_24"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/direct_to_attack_action_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="180dp"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:text="Attacker's Perspective"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/direct_to_attack_fab"
+        app:layout_constraintTop_toBottomOf="@+id/add_fab" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/direct_to_shor_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/black"
+        android:contentDescription="@string/app_name"
+        app:fabSize="normal"
+        app:layout_constraintStart_toStartOf="@+id/add_fab"
+        app:layout_constraintTop_toBottomOf="@+id/direct_to_attack_fab"
+        app:srcCompat="@drawable/baseline_add_24"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/direct_to_shor_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="252dp"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:text="Shor"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/direct_to_shor_fab"
+        app:layout_constraintTop_toBottomOf="@+id/add_fab" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

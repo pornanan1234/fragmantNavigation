@@ -15,9 +15,11 @@ import android.widget.TextView;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class fragment2 extends Fragment {
+public class shorFragment1 extends Fragment {
+
+
     View view;
-    Button nextBtn,previousBtn;
+    Button nextBtn;
 
     FloatingActionButton backToHome, goToAttack, goToDefense,goToShor;
     ExtendedFloatingActionButton mAddFab;
@@ -28,9 +30,9 @@ public class fragment2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_fragment2, container, false);
 
+        // Inflate the layout for this fragment
+        view = inflater.inflate(R.layout.fragment_shor1, container, false);
 
         setFab(view);
 
@@ -63,30 +65,29 @@ public class fragment2 extends Fragment {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        LaunchHomeFragment();
+                    }
+                });
+
+        goToShor.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        LaunchShorFragment();
 
                     }
                 });
 
-
-        nextBtn = view.findViewById(R.id.fragment2toNext);
+        nextBtn = view.findViewById(R.id.shorFragment1toNext);
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment(new fragment3());
+                replaceFragment(new shorFragment2());
             }
         });
 
-        previousBtn = view.findViewById(R.id.fragment2toPrevious);
-        previousBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                replaceFragment(new fragment1());
-            }
-        });
         return view;
-
     }
-
     private void replaceFragment(Fragment fragment){
 
         FragmentManager fragmentManager = getParentFragmentManager();
@@ -150,6 +151,7 @@ public class fragment2 extends Fragment {
             // user clicks on the shrinked
             // parent FAB
             mAddFab.extend();
+             view.findViewById(R.id.shor1text).setVisibility(View.GONE);
             // make the boolean variable true as
             // we have set the sub FABs
             // visibility to GONE
@@ -172,11 +174,20 @@ public class fragment2 extends Fragment {
             // Set the FAB to shrink after user
             // closes all the sub FABs
             mAddFab.shrink();
+            view.findViewById(R.id.shor1text).setVisibility(View.VISIBLE);
             // make the boolean variable false
             // as we have set the sub FABs
             // visibility to GONE
             isAllFabsVisible = false;
         }
+    }
+
+    public void LaunchShorFragment() {
+        replaceFragment(new shorFragment1());
+    }
+
+    public void LaunchHomeFragment() {
+        replaceFragment(new fragment1());
     }
 
 }

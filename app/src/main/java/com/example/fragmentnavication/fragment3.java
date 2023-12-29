@@ -1,21 +1,22 @@
 package com.example.fragmentnavication;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.fragment.app.Fragment;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class fragment2 extends Fragment {
+public class fragment3 extends Fragment {
     View view;
     Button nextBtn,previousBtn;
 
@@ -24,13 +25,12 @@ public class fragment2 extends Fragment {
     TextView directToHomeActionText, DirectToAttackActionText, DirectToDefenseActionText,DirectToShorActionText;
     // to check whether sub FABs are visible or not
     Boolean isAllFabsVisible;
-
+    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_fragment2, container, false);
-
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.fragment_fragment3, container, false);
 
         setFab(view);
 
@@ -66,26 +66,17 @@ public class fragment2 extends Fragment {
 
                     }
                 });
-
-
-        nextBtn = view.findViewById(R.id.fragment2toNext);
-        nextBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                replaceFragment(new fragment3());
-            }
-        });
-
-        previousBtn = view.findViewById(R.id.fragment2toPrevious);
+        previousBtn = view.findViewById(R.id.fragment3toPrevious);
         previousBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment(new fragment1());
+                replaceFragment(new fragment2());
             }
         });
         return view;
 
     }
+
 
     private void replaceFragment(Fragment fragment){
 
@@ -150,6 +141,9 @@ public class fragment2 extends Fragment {
             // user clicks on the shrinked
             // parent FAB
             mAddFab.extend();
+            view.findViewById(R.id.fragement3text).setVisibility(View.GONE);
+            view.findViewById(R.id.fragment3toPrevious).setVisibility(View.GONE);
+
             // make the boolean variable true as
             // we have set the sub FABs
             // visibility to GONE
@@ -172,11 +166,12 @@ public class fragment2 extends Fragment {
             // Set the FAB to shrink after user
             // closes all the sub FABs
             mAddFab.shrink();
+            view.findViewById(R.id.fragement3text).setVisibility(View.VISIBLE);
+            view.findViewById(R.id.fragment3toPrevious).setVisibility(View.VISIBLE);
             // make the boolean variable false
             // as we have set the sub FABs
             // visibility to GONE
             isAllFabsVisible = false;
         }
     }
-
 }
