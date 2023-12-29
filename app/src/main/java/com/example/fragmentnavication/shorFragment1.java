@@ -151,6 +151,7 @@ public class shorFragment1 extends Fragment {
             // user clicks on the shrinked
             // parent FAB
             mAddFab.extend();
+             view.findViewById(R.id.shor1text).setVisibility(View.GONE);
             // make the boolean variable true as
             // we have set the sub FABs
             // visibility to GONE
@@ -173,6 +174,7 @@ public class shorFragment1 extends Fragment {
             // Set the FAB to shrink after user
             // closes all the sub FABs
             mAddFab.shrink();
+            view.findViewById(R.id.shor1text).setVisibility(View.VISIBLE);
             // make the boolean variable false
             // as we have set the sub FABs
             // visibility to GONE
