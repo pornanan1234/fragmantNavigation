@@ -22,6 +22,7 @@ import pl.droidsonroids.gif.GifTextView;
 
 public class fragment1 extends Fragment {
 
+
     View view;
     Button nextBtn;
     GifImageView  gifImageView;
@@ -191,11 +192,9 @@ public class fragment1 extends Fragment {
         view.findViewById(R.id.fragment1toNext).setVisibility(View.GONE);
         gifImageView.setVisibility(View.GONE);
 
-        // make the boolean variable true as
-            // we have set the sub FABs
-            // visibility to GONE
-
     }
+
+
 
     public void LaunchShorFragment() {
         replaceFragment(new shorFragment1());
@@ -211,3 +210,4 @@ public class fragment1 extends Fragment {
     }
 
 }
+

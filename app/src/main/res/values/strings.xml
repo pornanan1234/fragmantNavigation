@@ -18,4 +18,18 @@
     <string name="previous">
          "&lt; Previous"
     </string>
+    <string name="intro_page_one_one">
+    "Quantum physics is the study of \n matter and energy at an atomic and subatomic level."
+    </string>
+    <string name="intro_page_one_two">
+    "Apparently, objects at a macroscopic level and fundamental level do act differently. \n\n"
+    "The understanding of these unique characteristics can then be applied \n to develop our pre-existing technology and methods. \n\n"
+    </string>
+    <string name="next">
+        "Next >"
+    </string>
+    <string name="previous">
+         "&lt; Previous"
+    </string>
+
 </resources>

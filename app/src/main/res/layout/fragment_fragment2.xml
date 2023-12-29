@@ -6,8 +6,10 @@
     android:background="@color/white"
     tools:context=".fragment2">
 
-    <include layout="@layout/floatbutton"/>
     <!-- TODO: Update blank fragment layout -->
+
+    <include layout="@layout/floatbutton" />
+
     <TextView
         android:id="@+id/intro2text"
         android:layout_width="wrap_content"
@@ -20,21 +22,33 @@
     <Button
         android:id="@+id/fragment2toPrevious"
         android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_alignParentLeft="true"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginBottom="50dp"
-        android:text="Fragment 1" />
+        android:layout_marginRight="234dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:text="@string/previous"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/fragment2toNext"
         android:layout_width="150dp"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="226dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="50dp"
-        android:text="Fragment 3" />
+        android:layout_marginRight="45dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:text="@string/next"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 </RelativeLayout>
