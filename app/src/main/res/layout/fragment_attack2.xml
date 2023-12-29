@@ -3,22 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".shorFragment2">
+    tools:context=".AttackFragment2">
 
     <include layout="@layout/floatbutton"/>
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/shor2text"
+        android:id="@+id/attack2text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Shor 2"
-        android:textColor="@color/black"
+        android:text="Attack 2"
         android:textSize="32dp" />
 
     <Button
-        android:id="@+id/shorfragment2toPrevious"
+        android:id="@+id/Attackfragment2toPrevious"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_alignParentLeft="true"
@@ -26,15 +24,16 @@
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginBottom="50dp"
-        android:text="Shor 1" />
+        android:text="Attack 1" />
 
     <Button
-        android:id="@+id/shorfragment2toNext"
+        android:id="@+id/Attackfragment2toNext"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="50dp"
-        android:text="shor 3" />
+        android:text="Attack 3" />
+
 </RelativeLayout>

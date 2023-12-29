@@ -1,33 +1,32 @@
 package com.example.fragmentnavication;
 
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.fragment.app.Fragment;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class fragment3 extends Fragment {
+
+public class AttackFragment3 extends Fragment {
+
     View view;
 
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_fragment3, container, false);
-
-
-        previousBtn = view.findViewById(R.id.fragment3toPrevious);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        view = inflater.inflate(R.layout.fragment_attack3, container, false);
+        nextBtn = view.findViewById(R.id.Attackfragment3toNext);
+        previousBtn = view.findViewById(R.id.Attackfragment3toPrevious);
         isAllFabsVisible=false;
         setHideFab();
 
@@ -58,7 +57,7 @@ public class fragment3 extends Fragment {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                    LaunchDefendFragment();
+                        LaunchDefendFragment();
                     }
                 });
         backToHome.setOnClickListener(
@@ -78,11 +77,18 @@ public class fragment3 extends Fragment {
         });
 
 
+        nextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                replaceFragment(new AttackFragment4());
+            }
+        });
+
 
         previousBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment(new fragment2());
+                replaceFragment(new AttackFragment2());
             }
         });
         view.setOnClickListener(new View.OnClickListener(){
@@ -149,7 +155,7 @@ public class fragment3 extends Fragment {
         // Set the Extended floating action button to
         // shrinked state initially
         mAddFab.shrink();
-        view.findViewById(R.id.intro3text).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.attack3text).setVisibility(View.VISIBLE);
 
     }
 
@@ -173,7 +179,7 @@ public class fragment3 extends Fragment {
         // user clicks on the shrinked
         // parent FAB
         mAddFab.extend();
-        view.findViewById(R.id.intro3text).setVisibility(View.GONE);
+        view.findViewById(R.id.attack3text).setVisibility(View.GONE);
         // make the boolean variable true as
         // we have set the sub FABs
         // visibility to GONE
