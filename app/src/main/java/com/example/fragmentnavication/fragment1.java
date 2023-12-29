@@ -1,5 +1,6 @@
 package com.example.fragmentnavication;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -68,6 +69,16 @@ public class fragment1 extends Fragment {
 
             }
         });
+
+        goToShor.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        LaunchShorFragment();
+
+                    }
+                });
+
         nextBtn = view.findViewById(R.id.fragment1toNext);
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -171,4 +182,7 @@ public class fragment1 extends Fragment {
         }
     }
 
+    public void LaunchShorFragment() {
+        replaceFragment(new shorFragment1());
+    }
 }
