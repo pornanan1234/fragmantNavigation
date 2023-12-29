@@ -3,21 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DefendFragment3">
+    tools:context=".DefendFragment8">
 
     <include layout="@layout/floatbutton"/>
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/Defend3text"
+        android:id="@+id/Defend8text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Defend 3"
+        android:text="Defend 8"
         android:textSize="32dp" />
 
 
     <Button
-        android:id="@+id/Defendfragment3toPrevious"
+        android:id="@+id/Defendfragment8toPrevious"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_alignParentLeft="true"
@@ -28,7 +28,7 @@
         android:text="@string/previous" />
 
     <Button
-        android:id="@+id/Defendragment3toNext"
+        android:id="@+id/Defendragment8toNext"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_alignParentRight="true"
