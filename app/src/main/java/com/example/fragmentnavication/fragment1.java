@@ -34,15 +34,22 @@ public class fragment1 extends Fragment {
 
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_fragment1, container, false);
-
-        setFab(view);
+        nextBtn = view.findViewById(R.id.fragment1toNext);
+        isAllFabsVisible=false;
+        setHideFab();
 
         mAddFab.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
 
-                        checkFab();
+                        isAllFabsVisible=!isAllFabsVisible;
+
+                        if(isAllFabsVisible) {
+                            setShowFab();
+                        }else {
+                            setHideFab();
+                        }
 
                     }
                 });
@@ -51,7 +58,7 @@ public class fragment1 extends Fragment {
         new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                LaunchAttackFragment();
             }
         });
 
@@ -59,14 +66,14 @@ public class fragment1 extends Fragment {
         new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                LaunchDefendFragment();
             }
         });
         backToHome.setOnClickListener(
         new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                LaunchIntroFragment();
             }
         });
 
@@ -79,11 +86,25 @@ public class fragment1 extends Fragment {
                     }
                 });
 
-        nextBtn = view.findViewById(R.id.fragment1toNext);
+
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 replaceFragment(new fragment2());
+            }
+        });
+
+        view.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+
+                if(isAllFabsVisible) {
+                    setHideFab();
+                    isAllFabsVisible=!isAllFabsVisible;
+                }
+
+
             }
         });
 
@@ -98,7 +119,7 @@ public class fragment1 extends Fragment {
         fragmentTransaction.commit();
     }
 
-    private void setFab(View view){
+    private void setHideFab(){
         mAddFab = view.findViewById(R.id.add_fab);
         backToHome = view.findViewById(R.id.direct_to_home_fab);
         goToAttack = view.findViewById(R.id.direct_to_attack_fab);
@@ -126,15 +147,16 @@ public class fragment1 extends Fragment {
         // make the boolean variable as false, as all the
         // action name texts and all the sub FABs are
         // invisible
-        isAllFabsVisible = false;
+        //isAllFabsVisible = false;
         // Set the Extended floating action button to
         // shrinked state initially
         mAddFab.shrink();
 
+        view.findViewById(R.id.intro1text).setVisibility(View.VISIBLE);
     }
 
-    private void checkFab(){
-        if (!isAllFabsVisible) {
+    private void setShowFab(){
+
             // when isAllFabsVisible becomes
             // true make all the action name
             // texts and FABs VISIBLE.
@@ -153,36 +175,24 @@ public class fragment1 extends Fragment {
             // user clicks on the shrinked
             // parent FAB
             mAddFab.extend();
+            view.findViewById(R.id.intro1text).setVisibility(View.GONE);
             // make the boolean variable true as
             // we have set the sub FABs
             // visibility to GONE
-            isAllFabsVisible = true;
-        } else {
-            // when isAllFabsVisible becomes
-            // true make all the action name
-            // texts and FABs GONE.
-            backToHome.hide();
-            goToAttack.hide();
-            goToDefense.hide();
-            goToShor.hide();
-            directToHomeActionText
-                    .setVisibility(View.GONE);
-            DirectToAttackActionText
-                    .setVisibility(View.GONE);
-            DirectToDefenseActionText
-                    .setVisibility(View.GONE);
-            DirectToShorActionText.setVisibility(View.GONE);
-            // Set the FAB to shrink after user
-            // closes all the sub FABs
-            mAddFab.shrink();
-            // make the boolean variable false
-            // as we have set the sub FABs
-            // visibility to GONE
-            isAllFabsVisible = false;
-        }
+
     }
 
     public void LaunchShorFragment() {
         replaceFragment(new shorFragment1());
     }
+    public void LaunchIntroFragment() {
+        replaceFragment(new fragment1());
+    }
+    public void LaunchAttackFragment() {
+        replaceFragment(new AttackFragment1());
+    }
+    public void LaunchDefendFragment() {
+        replaceFragment(new DefendFragment1());
+    }
+
 }

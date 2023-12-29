@@ -11,11 +11,15 @@
         android:layout_height="match_parent">
 
         <include layout="@layout/floatbutton"/>
+
         <TextView
             android:id="@+id/fragement3text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/text_margin"
+            android:layout_marginStart="@dimen/text_margin"
+            android:layout_marginTop="@dimen/text_margin"
+            android:layout_marginEnd="@dimen/text_margin"
+            android:layout_marginBottom="@dimen/text_margin"
             android:text="@string/large_text" />
 
         <Button
