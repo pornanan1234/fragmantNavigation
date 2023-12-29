@@ -7,16 +7,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.fragment.app.Fragment;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class fragment3 extends Fragment {
+public class fragment9 extends Fragment {
     View view;
 
     @Nullable
@@ -24,10 +24,10 @@ public class fragment3 extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_fragment3, container, false);
+        view = inflater.inflate(R.layout.fragment_fragment9, container, false);
 
-        nextBtn =view.findViewById(R.id.fragment3toNext);
-        previousBtn = view.findViewById(R.id.fragment3toPrevious);
+        nextBtn =view.findViewById(R.id.fragment9toNext);
+        previousBtn = view.findViewById(R.id.fragment9toPrevious);
         isAllFabsVisible=false;
         setHideFab();
 
@@ -78,18 +78,17 @@ public class fragment3 extends Fragment {
         });
 
 
+
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment(new fragment4());
+                replaceFragment(new fragment10());
             }
         });
-
-
         previousBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment(new fragment2());
+                replaceFragment(new fragment8());
             }
         });
         view.setOnClickListener(new View.OnClickListener(){
@@ -156,7 +155,7 @@ public class fragment3 extends Fragment {
         // Set the Extended floating action button to
         // shrinked state initially
         mAddFab.shrink();
-        view.findViewById(R.id.intro3text).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.intro9text).setVisibility(View.VISIBLE);
 
     }
 
@@ -180,7 +179,7 @@ public class fragment3 extends Fragment {
         // user clicks on the shrinked
         // parent FAB
         mAddFab.extend();
-        view.findViewById(R.id.intro3text).setVisibility(View.GONE);
+        view.findViewById(R.id.intro9text).setVisibility(View.GONE);
         // make the boolean variable true as
         // we have set the sub FABs
         // visibility to GONE
