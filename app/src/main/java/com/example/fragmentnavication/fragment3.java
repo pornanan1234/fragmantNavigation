@@ -149,8 +149,7 @@ public class fragment3 extends Fragment {
         // Set the Extended floating action button to
         // shrinked state initially
         mAddFab.shrink();
-        view.findViewById(R.id.fragement3text).setVisibility(View.VISIBLE);
-        view.findViewById(R.id.fragment3toPrevious).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.intro3text).setVisibility(View.VISIBLE);
 
     }
 
@@ -174,8 +173,7 @@ public class fragment3 extends Fragment {
         // user clicks on the shrinked
         // parent FAB
         mAddFab.extend();
-        view.findViewById(R.id.fragement3text).setVisibility(View.GONE);
-        view.findViewById(R.id.fragment3toPrevious).setVisibility(View.GONE);
+        view.findViewById(R.id.intro3text).setVisibility(View.GONE);
         // make the boolean variable true as
         // we have set the sub FABs
         // visibility to GONE

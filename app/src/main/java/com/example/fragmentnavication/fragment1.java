@@ -17,11 +17,14 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import pl.droidsonroids.gif.GifImageView;
+import pl.droidsonroids.gif.GifTextView;
+
 public class fragment1 extends Fragment {
 
     View view;
     Button nextBtn;
-
+    GifImageView  gifImageView;
     FloatingActionButton backToHome, goToAttack, goToDefense,goToShor;
     ExtendedFloatingActionButton mAddFab;
     TextView directToHomeActionText, DirectToAttackActionText, DirectToDefenseActionText,DirectToShorActionText;
@@ -35,6 +38,7 @@ public class fragment1 extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_fragment1, container, false);
         nextBtn = view.findViewById(R.id.fragment1toNext);
+        gifImageView = (GifImageView) view.findViewById(R.id.imageView);
         isAllFabsVisible=false;
         setHideFab();
 
@@ -102,6 +106,7 @@ public class fragment1 extends Fragment {
                 if(isAllFabsVisible) {
                     setHideFab();
                     isAllFabsVisible=!isAllFabsVisible;
+
                 }
 
 
@@ -152,7 +157,11 @@ public class fragment1 extends Fragment {
         // shrinked state initially
         mAddFab.shrink();
 
-        view.findViewById(R.id.intro1text).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.ApplicationText).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.textView1).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.textView2).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.fragment1toNext).setVisibility(View.VISIBLE);
+        gifImageView.setVisibility(View.VISIBLE);
     }
 
     private void setShowFab(){
@@ -175,8 +184,14 @@ public class fragment1 extends Fragment {
             // user clicks on the shrinked
             // parent FAB
             mAddFab.extend();
-            view.findViewById(R.id.intro1text).setVisibility(View.GONE);
-            // make the boolean variable true as
+
+        view.findViewById(R.id.ApplicationText).setVisibility(View.GONE);
+        view.findViewById(R.id.textView1).setVisibility(View.GONE);
+        view.findViewById(R.id.textView2).setVisibility(View.GONE);
+        view.findViewById(R.id.fragment1toNext).setVisibility(View.GONE);
+        gifImageView.setVisibility(View.GONE);
+
+        // make the boolean variable true as
             // we have set the sub FABs
             // visibility to GONE
 
