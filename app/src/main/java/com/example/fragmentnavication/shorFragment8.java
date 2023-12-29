@@ -15,16 +15,16 @@ import com.google.android.material.floatingactionbutton.ExtendedFloatingActionBu
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
-public class shorFragment3 extends Fragment {
+public class shorFragment8 extends Fragment {
     View view;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_shor3, container, false);
-        nextBtn = view.findViewById(R.id.shorfragment3toNext);
-        previousBtn = view.findViewById(R.id.shorfragment3toPrevious);
+        view = inflater.inflate(R.layout.fragment_shor8, container, false);
+        nextBtn = view.findViewById(R.id.shorfragment8toNext);
+        previousBtn = view.findViewById(R.id.shorfragment8toPrevious);
         isAllFabsVisible=false;
         setHideFab();
 
@@ -78,7 +78,7 @@ public class shorFragment3 extends Fragment {
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment(new shorFragment4());
+                replaceFragment(new shorFragment9());
             }
         });
 
@@ -86,7 +86,7 @@ public class shorFragment3 extends Fragment {
         previousBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment(new shorFragment2());
+                replaceFragment(new shorFragment7());
             }
         });
         view.setOnClickListener(new View.OnClickListener(){
@@ -153,7 +153,7 @@ public class shorFragment3 extends Fragment {
         // Set the Extended floating action button to
         // shrinked state initially
         mAddFab.shrink();
-        view.findViewById(R.id.shor3text).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.shor8text).setVisibility(View.VISIBLE);
     }
 
     private void setShowFab(){
@@ -176,7 +176,7 @@ public class shorFragment3 extends Fragment {
         // user clicks on the shrinked
         // parent FAB
         mAddFab.extend();
-        view.findViewById(R.id.shor3text).setVisibility(View.GONE);
+        view.findViewById(R.id.shor8text).setVisibility(View.GONE);
         // make the boolean variable true as
         // we have set the sub FABs
         // visibility to GONE

@@ -1,38 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/white"
     tools:context=".shorFragment3">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <include layout="@layout/floatbutton"/>
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/shor3text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Shor 3"
+        android:textColor="@color/white"
+        android:textSize="32dp" />
 
-        <include layout="@layout/floatbutton"/>
+    <Button
+        android:id="@+id/shorfragment3toPrevious"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="50dp"
+        android:text="@string/previous" />
 
-        <TextView
-            android:id="@+id/shor3text"
-            android:layout_width="172dp"
-            android:layout_height="687dp"
-            android:layout_marginStart="@dimen/text_margin"
-            android:layout_marginTop="@dimen/text_margin"
-            android:layout_marginEnd="@dimen/text_margin"
-            android:layout_marginBottom="@dimen/text_margin"
-            android:text="@string/large_text" />
-
-        <Button
-            android:id="@+id/shorfragment3toPrevious"
-            android:layout_width="150dp"
-            android:layout_height="60dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="40dp"
-            android:layout_marginBottom="50dp"
-            android:text="Shor 2" />
-    </RelativeLayout>
-
-
-</androidx.core.widget.NestedScrollView>
+    <Button
+        android:id="@+id/shorfragment3toNext"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="50dp"
+        android:text="@string/next" />
+</RelativeLayout>

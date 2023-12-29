@@ -1,30 +1,30 @@
 package com.example.fragmentnavication;
 
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+public class shorFragment_answer extends Fragment {
 
-public class shorFragment3 extends Fragment {
     View view;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_shor3, container, false);
-        nextBtn = view.findViewById(R.id.shorfragment3toNext);
-        previousBtn = view.findViewById(R.id.shorfragment3toPrevious);
+        view = inflater.inflate(R.layout.fragment_shor_answer, container, false);
+        previousBtn = view.findViewById(R.id.shorfragmentAnswertoPrevious);
         isAllFabsVisible=false;
         setHideFab();
 
@@ -75,13 +75,6 @@ public class shorFragment3 extends Fragment {
         });
 
 
-        nextBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                replaceFragment(new shorFragment4());
-            }
-        });
-
 
         previousBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,7 +98,7 @@ public class shorFragment3 extends Fragment {
         return view;
 
     }
-    Button nextBtn,previousBtn;
+    Button previousBtn;
 
     FloatingActionButton backToHome, goToAttack, goToDefense,goToShor;
     ExtendedFloatingActionButton mAddFab;
@@ -153,7 +146,9 @@ public class shorFragment3 extends Fragment {
         // Set the Extended floating action button to
         // shrinked state initially
         mAddFab.shrink();
-        view.findViewById(R.id.shor3text).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.shorAnswertext).setVisibility(View.VISIBLE);
+
+        view.findViewById(R.id.shorAnswertext).setVisibility(View.VISIBLE);
     }
 
     private void setShowFab(){
@@ -176,7 +171,9 @@ public class shorFragment3 extends Fragment {
         // user clicks on the shrinked
         // parent FAB
         mAddFab.extend();
-        view.findViewById(R.id.shor3text).setVisibility(View.GONE);
+        view.findViewById(R.id.shorAnswertext).setVisibility(View.GONE);
+        view.findViewById(R.id.shorfragmentAnswertoPrevious).setVisibility(View.GONE);
+
         // make the boolean variable true as
         // we have set the sub FABs
         // visibility to GONE
