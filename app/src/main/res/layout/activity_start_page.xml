@@ -12,7 +12,7 @@
         android:layout_width="348dp"
         android:layout_height="155dp"
         android:fontFamily="@font/baloo_bhai_2_extrabold"
-        android:text="APPLICATION OF QUANTUM THEORY IN CYBERSECURITY"
+        android:text="APPLICATION OF QUANTUM PHYSICS IN CYBERSECURITY"
         android:textAlignment="center"
         android:textColor="#5300B0"
         android:textSize="30sp"

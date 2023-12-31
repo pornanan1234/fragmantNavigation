@@ -26,11 +26,33 @@
 
     </string>
     <string name="intro_page_two_superposition_2">
-    A quantum computer contains qubits (quantum bits) which represent both binary values (0 and 1) at the same time, \n
+    "A quantum computer contains qubits (quantum bits) which represent both binary values (0 and 1) at the same time, \n"
     </string>
     <string name = "intro_page_two_superposition_3">
-    allowing certain processes to be done much faster in quantum computers \n
-    compared to classic computers. \n\n
-        (Classic bits can only store either 0 or 1 at a certain time.)"
+    "allowing certain processes to be done much faster in quantum computers
+    compared to classic computers. \n
+        (Classic bits can only store either\n 0  or 1 at a certain time.)"
     </string>
+    <string name="uncertainty"> "2. Uncertainty Principle"</string>
+    <string name="uncertainty_one">"Measuring one property of a quantum particle would disturb its other properties. \n
+        Therefore, two properties of a particle cannot be precisely known at the same time."
+</string>
+    <string name="entanglement">"3. Entanglement"</string>
+    <string name="entanglement_1">"Quantum particles have a special connection called entanglement.
+        To precisely describe the properties of a quantum particle, the other connected particles also need to be observed. \n
+        Obtaining information of one particle
+        would allow you to understand another connected particle."
+</string>
+    <string name="last_intro">"The growth in the study of quantum mechanics allow us to:
+    better secure communication among devices,"
+    </string>
+    <string name="last_intro_2">"but at the same time also opens up an opportunity for hackers
+    to easily penetrate existing encryption methods."</string>
+
+    <string name="last_intro_3"> "This application will provide information regarding the usages of quantum physics in both perspectives."</string>
+
+
+    <string name="tips">"(Please check the menu bar on the top left to advance to other sections.)"</string>
+
+
 </resources>

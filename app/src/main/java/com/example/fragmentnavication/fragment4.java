@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,7 +19,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class fragment4 extends Fragment {
     View view;
-
+    ImageView imageView;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -27,6 +28,7 @@ public class fragment4 extends Fragment {
         view = inflater.inflate(R.layout.fragment_fragment4, container, false);
 
         nextBtn =view.findViewById(R.id.fragment4toNext);
+        imageView = view.findViewById(R.id.imageView);
         previousBtn = view.findViewById(R.id.fragment4toPrevious);
         isAllFabsVisible=false;
         setHideFab();
@@ -155,7 +157,12 @@ public class fragment4 extends Fragment {
         // Set the Extended floating action button to
         // shrinked state initially
         mAddFab.shrink();
-        view.findViewById(R.id.intro4text).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.ApplicationText).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.textView1).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.textView2).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.fragment4toNext).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.fragment4toPrevious).setVisibility(View.VISIBLE);
+        imageView.setVisibility(View.VISIBLE);
 
     }
 
@@ -179,7 +186,12 @@ public class fragment4 extends Fragment {
         // user clicks on the shrinked
         // parent FAB
         mAddFab.extend();
-        view.findViewById(R.id.intro4text).setVisibility(View.GONE);
+        view.findViewById(R.id.ApplicationText).setVisibility(View.GONE);
+        view.findViewById(R.id.textView1).setVisibility(View.GONE);
+        view.findViewById(R.id.textView2).setVisibility(View.GONE);
+        view.findViewById(R.id.fragment4toNext).setVisibility(View.GONE);
+        view.findViewById(R.id.fragment4toPrevious).setVisibility(View.GONE);
+        imageView.setVisibility(View.GONE);
         // make the boolean variable true as
         // we have set the sub FABs
         // visibility to GONE

@@ -3,21 +3,99 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/black"
+    android:backgroundTint="#000000"
+    android:backgroundTintMode="multiply"
     tools:context=".fragment5">
 
     <!-- TODO: Update blank fragment layout -->
+
+
     <include layout="@layout/floatbutton" />
 
+    <ImageView
+
+        android:id="@+id/imageView"
+        android:layout_width="336dp"
+        android:layout_height="421dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="0dp"
+        android:src="@drawable/entanglement_chart_c1972bded042d9571e841ee153e5d690" />
+
     <TextView
-        android:id="@+id/intro5text"
-        android:layout_width="wrap_content"
+        android:id="@+id/ApplicationText"
+        android:layout_width="262dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Introduction 5"
-        android:textColor="@color/white"
-        android:textSize="32dp" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="24dp"
+        android:layout_x="135dp"
+        android:layout_y="13dp"
+        android:fontFamily="@font/baloo_bhai_2_extrabold"
+        android:text="Brief Introduction"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="350dp"
+        android:layout_height="109dp"
+        android:layout_below="@+id/ApplicationText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="-30dp"
+        android:layout_x="42dp"
+        android:layout_y="105dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="@string/entanglement"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="350dp"
+        android:layout_height="306dp"
+        android:layout_above="@+id/imageView"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="-52dp"
+        android:layout_marginBottom="-98dp"
+        android:layout_x="36dp"
+        android:layout_y="20dp"
+        android:fontFamily="@font/baloo_bhai_2"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="@string/entanglement_1"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/fragment5toNext"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="57dp"
+        android:layout_marginBottom="40dp"
+        android:layout_x="250dp"
+        android:layout_y="665dp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:text="@string/next"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/fragment5toPrevious"
@@ -26,30 +104,15 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="20dp"
         android:layout_marginRight="234dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="28dp"
         android:backgroundTint="@color/blue"
         android:fontFamily="@font/baloo_bhai_2_semibold"
         android:text="@string/previous"
         android:textColor="@color/black"
         android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/fragment5toNext"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="38dp"
-        android:layout_marginBottom="28dp"
-        android:backgroundTint="@color/blue"
-        android:fontFamily="@font/baloo_bhai_2_semibold"
-        android:text="@string/next"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
-
-
 
 </RelativeLayout>
+

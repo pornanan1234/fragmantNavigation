@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,7 +19,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class fragment6 extends Fragment {
     View view;
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -26,10 +26,13 @@ public class fragment6 extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_fragment6, container, false);
 
-        nextBtn =view.findViewById(R.id.fragment6toNext);
         previousBtn = view.findViewById(R.id.fragment6toPrevious);
+        attackLaunch = view.findViewById(R.id.attackLaunch);
+        defenseLaunch = view.findViewById(R.id.defenseLaunch);
         isAllFabsVisible=false;
         setHideFab();
+
+
 
         mAddFab.setOnClickListener(
                 new View.OnClickListener() {
@@ -54,6 +57,14 @@ public class fragment6 extends Fragment {
                     }
                 });
 
+        attackLaunch.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        LaunchAttackFragment();
+                    }
+                });
+
         goToDefense.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -61,6 +72,15 @@ public class fragment6 extends Fragment {
                     LaunchDefendFragment();
                     }
                 });
+
+        defenseLaunch.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        LaunchDefendFragment();
+                    }
+                });
+
         backToHome.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -79,12 +99,7 @@ public class fragment6 extends Fragment {
 
 
 
-        nextBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                replaceFragment(new fragment7());
-            }
-        });
+
         previousBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,7 +122,7 @@ public class fragment6 extends Fragment {
         return view;
 
     }
-    Button nextBtn,previousBtn;
+    Button nextBtn,previousBtn, attackLaunch, defenseLaunch;
 
     FloatingActionButton backToHome, goToAttack, goToDefense,goToShor;
     ExtendedFloatingActionButton mAddFab;
@@ -155,8 +170,14 @@ public class fragment6 extends Fragment {
         // Set the Extended floating action button to
         // shrinked state initially
         mAddFab.shrink();
-        view.findViewById(R.id.intro6text).setVisibility(View.VISIBLE);
-
+        view.findViewById(R.id.ApplicationText).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.textView1).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.textView2).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.textView3).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.textView4).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.fragment6toPrevious).setVisibility(View.VISIBLE);
+        attackLaunch.setVisibility(View.VISIBLE);
+        defenseLaunch.setVisibility(View.VISIBLE);
     }
 
     private void setShowFab(){
@@ -179,7 +200,14 @@ public class fragment6 extends Fragment {
         // user clicks on the shrinked
         // parent FAB
         mAddFab.extend();
-        view.findViewById(R.id.intro6text).setVisibility(View.GONE);
+        view.findViewById(R.id.ApplicationText).setVisibility(View.GONE);
+        view.findViewById(R.id.textView1).setVisibility(View.GONE);
+        view.findViewById(R.id.textView2).setVisibility(View.GONE);
+        view.findViewById(R.id.textView3).setVisibility(View.GONE);
+        view.findViewById(R.id.textView4).setVisibility(View.GONE);
+        view.findViewById(R.id.fragment6toPrevious).setVisibility(View.GONE);
+        attackLaunch.setVisibility(View.GONE);
+        defenseLaunch.setVisibility(View.GONE);
         // make the boolean variable true as
         // we have set the sub FABs
         // visibility to GONE
