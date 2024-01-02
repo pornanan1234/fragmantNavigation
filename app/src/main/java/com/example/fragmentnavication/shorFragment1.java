@@ -144,7 +144,7 @@ public class shorFragment1 extends Fragment {
         DirectToAttackActionText.setVisibility(View.GONE);
         DirectToDefenseActionText.setVisibility(View.GONE);
         DirectToShorActionText.setVisibility(View.GONE);
-        view.findViewById(R.id.shor1text).setVisibility(View.VISIBLE);
+
         // make the boolean variable as false, as all the
         // action name texts and all the sub FABs are
         // invisible
@@ -175,7 +175,7 @@ public class shorFragment1 extends Fragment {
         // user clicks on the shrinked
         // parent FAB
         mAddFab.extend();
-        view.findViewById(R.id.shor1text).setVisibility(View.GONE);
+
         // make the boolean variable true as
         // we have set the sub FABs
         // visibility to GONE
