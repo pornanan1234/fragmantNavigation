@@ -520,7 +520,6 @@
                     android:textStyle="italic"
                     android:gravity="center"
                     android:text="\n[Warning 2!] If the number of rotations is even, go back to Step 1 and choose different value of 'k'"/>
-
                 <TextView
                     android:id="@+id/Show2.2"
                     android:layout_width="match_parent"
