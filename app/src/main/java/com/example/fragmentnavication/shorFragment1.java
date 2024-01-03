@@ -1,11 +1,13 @@
 package com.example.fragmentnavication;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +17,25 @@ import android.widget.TextView;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import org.w3c.dom.Text;
+
 public class shorFragment1 extends Fragment {
+
+    Context context;
+
+    int q, r, k, p, newq, key1, key2;
+
+    Log log;
+
+    //the variables for the preparation step
+    TextView selectPrimeNumber1, NumberPicker1, selectPrimeNumber2, NumberPicker2, Composite;
+    TextView ShorStep1, ShorStep1Explanation, SelectRandomK;
+    TextView Shor2point1, ShorStep2, ShorStep2Explanation, ShorStep2Formula, warning1, Shor2point2, warning2, Shor2point3;
+    TextView Step3point1, ShorStep3, ShorStep3Explanation, Shor3point2, warning3, Shor3point3;
+    TextView Shor4point1, ShorStep4, ShorStep4Explanation, Shor4point2, Shor4point3, Shor4point4, ShorStepFinal;
+    Button ShorToHome1, ShorToHome2;
+
+
 
 
 
@@ -25,7 +45,8 @@ public class shorFragment1 extends Fragment {
 
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_shor1, container, false);
-        nextBtn = view.findViewById(R.id.shorFragment1toNext);
+        ShorToHome1 = view.findViewById(R.id.ShorToHome1);
+        ShorToHome2 = view.findViewById(R.id.ShorToHome2);
         isAllFabsVisible=false;
         setHideFab();
 
@@ -77,13 +98,22 @@ public class shorFragment1 extends Fragment {
                     }
                 });
 
+        ShorToHome1.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        LaunchIntroFragment();
+                    }
+                });
 
-        nextBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                replaceFragment(new shorFragment2());
-            }
-        });
+        ShorToHome2.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        LaunchIntroFragment();
+                    }
+                });
+
 
         view.setOnClickListener(new View.OnClickListener(){
             @Override

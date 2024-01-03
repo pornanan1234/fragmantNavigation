@@ -7,28 +7,50 @@
     android:background="@color/black"
     tools:context=".shorFragment1">
 
-    <TextView
-        android:id="@+id/ApplicationText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="24dp"
-        android:layout_x="135dp"
-        android:layout_y="13dp"
-        android:fontFamily="@font/baloo_bhai_2_extrabold"
-        android:text="Shor's Algorithm"
-        android:textColor="@color/yellow"
-        android:textSize="28sp"
-        android:layout_gravity="right"
-        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/ApplicationText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right"
+            android:layout_margin="24dp"
+            android:layout_x="135dp"
+            android:layout_y="13dp"
+            android:fontFamily="@font/baloo_bhai_2_extrabold"
+            android:text="Shor's Algorithm"
+            android:textColor="@color/yellow"
+            android:textSize="28sp"
+            android:textStyle="bold" />
 
 
+        <Button
+            android:id="@+id/ShorToHome1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="left"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="@color/grey"
+            android:fontFamily="@font/baloo_bhai_2_semibold"
+            android:text="&lt;"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
+    </RelativeLayout>
 
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
+
 
         <ScrollView
             android:layout_width="wrap_content"
@@ -47,18 +69,6 @@
                 tools:context=".shorFragment1">
 
 
-
-                <Button
-                    android:id="@+id/shorFragment1toNext"
-                    android:layout_width="wrap_content"
-                    android:layout_gravity="left"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:backgroundTint="@color/grey"
-                    android:fontFamily="@font/baloo_bhai_2_semibold"
-                    android:text="Return to Main Page"
-                    android:textColor="@color/black"
-                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -80,17 +90,16 @@
                     android:fontFamily="@font/baloo_bhai_2_semibold"
                     android:text="In this section, we will explore the Shor's Algorithm. The following process is how a classic computer factorizes a large composite number. \n" />
 
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/baloo_bhai_2"
+                    android:gravity="center"
+                    android:text="(To proceed, please pick two prime numbers for your private key. The product of those numbers is your public key used for RSA encryption.) \n"
                     android:textColor="@color/grey"
                     android:textSize="16sp"
-                    android:fontFamily="@font/baloo_bhai_2"
-                    android:textStyle="italic"
-                    android:gravity="center"
-                    android:text="(To proceed, please pick two prime numbers for your private key. The product of those numbers is your public key used for RSA encryption.) \n" />
-
-
+                    android:textStyle="italic" />
 
                 <TextView
                     android:id="@+id/selectPrimeNumber1"
@@ -211,6 +220,7 @@
                 <!-->starting step 2<!-->
 
                 <TextView
+                    android:id="@+id/Shor2point1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/dark_grey"
@@ -253,6 +263,7 @@
                     android:textStyle="italic" />
 
                 <TextView
+                    android:id="@+id/warning1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/grey"
@@ -263,7 +274,7 @@
                     android:text="[Warning 1!] If the first round of completing the equation yields '1' right away, go back to Step 1 and choose a different value of 'k'."/>
 
                 <TextView
-                    android:id="@+id/Show2.1"
+                    android:id="@+id/Show2point2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/baloo_bhai_2_extrabold"
@@ -274,6 +285,7 @@
                     android:textStyle="italic"/>
 
                 <ImageView
+                    android:id="@+id/image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
@@ -512,6 +524,7 @@
                 </TableLayout>
 
                 <TextView
+                    android:id="@+id/warning2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/grey"
@@ -521,7 +534,7 @@
                     android:gravity="center"
                     android:text="\n[Warning 2!] If the number of rotations is even, go back to Step 1 and choose different value of 'k'"/>
                 <TextView
-                    android:id="@+id/Show2.2"
+                    android:id="@+id/Shor2point3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/baloo_bhai_2_extrabold"
@@ -534,6 +547,7 @@
                 <!-->starting step 3<!-->
 
                 <TextView
+                    android:id="@+id/Step3point1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/dark_grey"
@@ -564,7 +578,7 @@
                     android:text="Take the number of rotations (r) it took and divide it by 2. Check the remainder obtained in that rotation. This remainder is refered to as 'p'."/>
 
                 <TextView
-                    android:id="@+id/Show3.1"
+                    android:id="@+id/Shor3point2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/baloo_bhai_2_extrabold"
@@ -575,6 +589,7 @@
                     android:textStyle="italic"/>
 
                 <TextView
+                    android:id="@+id/warning3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/grey"
@@ -585,7 +600,7 @@
                     android:text="[Warning 3!] If p + 1 = N, then go back to Step 1 and choose a different value of k."/>
 
                 <TextView
-                    android:id="@+id/Show3.2"
+                    android:id="@+id/Shor3point3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/baloo_bhai_2_extrabold"
@@ -598,6 +613,7 @@
                 <!-->starting step 4<!-->
 
                 <TextView
+                    android:id="@+id/Shor4point1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/dark_grey"
@@ -628,7 +644,7 @@
                     android:text="Finally, to find the factors of N, use these two formulas:"/>
 
                 <TextView
-                    android:id="@+id/Show4.1"
+                    android:id="@+id/Shor4point2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/baloo_bhai_2_extrabold"
@@ -639,7 +655,7 @@
                     android:textStyle="italic"/>
 
                 <TextView
-                    android:id="@+id/Show4.2"
+                    android:id="@+id/Shor4point3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/baloo_bhai_2_extrabold"
@@ -650,7 +666,7 @@
                     android:textStyle="italic"/>
 
                 <TextView
-                    android:id="@+id/Show4.3"
+                    android:id="@+id/Shor4point4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/baloo_bhai_2_extrabold"
@@ -673,6 +689,7 @@
                 <!-->yay done<!-->
 
                 <TextView
+                    android:id="@+id/conclusion1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/grey"
@@ -683,6 +700,7 @@
                     android:text="\n(Congrats! You have gone through the whole process of Shor's Algorithm!)" />
 
                 <TextView
+                    android:id="@+id/conclusion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/yellow"
@@ -693,6 +711,7 @@
 
 
                 <TextView
+                    android:id="@+id/conclusion3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/light_red"
@@ -702,6 +721,7 @@
                     android:text="\n Conclusion"/>
 
                 <TextView
+                    android:id="@+id/conclusion4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/light_red"
@@ -711,6 +731,7 @@
                     android:text="\nAs you can see, this implementation of the Shor's Algorithm on a classic computer is very time-consuming (especially with much larger numbers used for RSA encryption), requiring many calculation, and guess and check attempts (ex. finding the k value that works). \n\nOn the other hand, quantum computers apply the Shor's algorithm slightly differently. \n\nAnother value, p, is obtained in order to better guess the number k. \n\nAlthough this method would run very slowly on a classic computer, with quantum computer's ability to calculate many inputs at once, the process will be much more efficient than the method demostrated in the section above. \n\nBecause a set of input is inserted to a quantum computer at the same time, another step, which is the Quantum Fourier Transform is also added to the process in order to cancel out the wrong guesses and allow the most probable guess to be measured. \n" />
 
                 <TextView
+                    android:id="@+id/conclusion5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/light_red"
@@ -720,6 +741,7 @@
                     android:text="\nTo summarize, Shor's algorithm can be used by both classic and quantum computers. However, with a slight change in the process, quantum computers can use this algorithm to factor large prime numbers more efficiently." />
 
                 <TextView
+                    android:id="@+id/conclusion6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/light_red"
@@ -730,7 +752,7 @@
                     android:text="\n"/>
 
                 <Button
-                    android:id="@+id/shorFragment1toNext2"
+                    android:id="@+id/ShorToHome2"
                     android:layout_width="wrap_content"
                     android:layout_gravity="center"
                     android:layout_height="wrap_content"

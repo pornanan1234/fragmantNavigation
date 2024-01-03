@@ -39,7 +39,7 @@
 </string>
     <string name="entanglement">"3. Entanglement"</string>
     <string name="entanglement_1">"Quantum particles have a special connection called entanglement.
-        To precisely describe the properties of a quantum particle, the other connected particles also need to be observed. \n
+        To precisely describe the properties of a quantum particle, the other connected particlesf also need to be observed. \n
         Obtaining information of one particle
         would allow you to understand another connected particle."
 </string>
