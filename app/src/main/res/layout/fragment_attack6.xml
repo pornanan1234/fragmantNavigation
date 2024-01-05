@@ -18,22 +18,33 @@
     <Button
         android:id="@+id/Attackfragment6toPrevious"
         android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_alignParentLeft="true"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginBottom="50dp"
-        android:text="@string/previous" />
+        android:layout_marginStart="20dp"
+        android:layout_marginRight="234dp"
+        android:layout_marginBottom="28dp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:text="@string/previous"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
 
     <Button
         android:id="@+id/Attackfragment6toNext"
         android:layout_width="150dp"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="50dp"
-        android:text="@string/next" />
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="38dp"
+        android:layout_marginBottom="28dp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:text="@string/next"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
 </RelativeLayout>

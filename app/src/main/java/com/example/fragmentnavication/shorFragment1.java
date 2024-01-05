@@ -24,16 +24,21 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.w3c.dom.Text;
 
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 public class shorFragment1 extends Fragment {
 
     Context context;
 
-    int q, r, k, p, newq, key1, key2;
+    int chosenNumber1, chosenNumber2, q, r, k, p, newq, key1, key2;
 
 
 
     //set variables
     Log log;
+    View view;
     NumberPicker NumberPicker1, NumberPicker2;
     TextView selectPrimeNumber1, selectPrimeNumber2, Composite;
     TextView ShorStep1, ShorStep1Explanation;
@@ -43,10 +48,11 @@ public class shorFragment1 extends Fragment {
     Button ShorToHome1, ShorToHome2;
     EditText SelectRandomK;
     TableLayout tableLayout;
+    List<Integer> answer = new ArrayList<>();
 
 
     //set prime number strings
-    final String[]  primeNumbers= {"-", "13" ,"17" ,"19","23","29","31","37","41","43","47"
+    final String[] primeNumbers = {"-", "13" ,"17" ,"19","23","29","31","37","41","43","47"
             ,"53","59","61","67","71","73","79","83","89","97","101","103","107"
     };;
 
@@ -57,14 +63,26 @@ public class shorFragment1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        // Inflate the layout for this fragment
-        context = context.getApplicationContext();
+        //context = context.getApplicationContext();
         view = inflater.inflate(R.layout.fragment_shor1, container, true);
         loadObject();
+
         //setHideFab();
    //     setHideStep2();
     //    setHideStep3();
     //    setHideStep4();
+
+        NumberPicker1.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                //hideAll();
+                chosenNumber1 = Integer.parseInt(primeNumbers[newVal]);
+            //    NumberPicker1.setDisplayedValues(primeNumbers);
+                selectPrimeNumber1.setText("Select Your First Prime Number" + primeNumbers[newVal]);
+
+            }
+        });
+
 
 
 
@@ -94,12 +112,8 @@ public class shorFragment1 extends Fragment {
         return null;
     }
 
-    View view;
 
-    FloatingActionButton backToHome, goToAttack, goToDefense,goToShor;
-    ExtendedFloatingActionButton mAddFab;
-    TextView directToHomeActionText, DirectToAttackActionText, DirectToDefenseActionText,DirectToShorActionText;
-    // to check whether sub FABs are visible or not
+
 
 
     private void replaceFragment(Fragment fragment){
@@ -117,12 +131,6 @@ public class shorFragment1 extends Fragment {
     }
     public void LaunchIntroFragment() {
         replaceFragment(new fragment1());
-    }
-    public void LaunchAttackFragment() {
-        replaceFragment(new AttackFragment1());
-    }
-    public void LaunchDefendFragment() {
-        replaceFragment(new DefendFragment1());
     }
 
     public void loadObject() {

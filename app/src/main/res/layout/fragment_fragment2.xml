@@ -81,6 +81,7 @@
         android:textColor="@color/blue"
         android:textSize="18sp" />
 
+
     <Button
         android:id="@+id/fragment2toNext"
         android:layout_width="150dp"
