@@ -26,7 +26,7 @@ public class AttackFragment4 extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_attack4, container, false);
         nextBtn = view.findViewById(R.id.Attackfragment4toNext);
-        previousBtn = view.findViewById(R.id.Attackfragement4Previous);
+        previousBtn = view.findViewById(R.id.Attackfragment4Previous);
         isAllFabsVisible=false;
         setHideFab();
 
@@ -155,7 +155,6 @@ public class AttackFragment4 extends Fragment {
         // Set the Extended floating action button to
         // shrinked state initially
         mAddFab.shrink();
-        view.findViewById(R.id.attack4text).setVisibility(View.VISIBLE);
 
     }
 
@@ -179,7 +178,7 @@ public class AttackFragment4 extends Fragment {
         // user clicks on the shrinked
         // parent FAB
         mAddFab.extend();
-        view.findViewById(R.id.attack4text).setVisibility(View.GONE);
+
         // we have set the sub FABs
         // visibility to GONE
 

@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,11 +50,13 @@ public class shorFragment1 extends Fragment {
     Button ShorToHome1, ShorToHome2;
     EditText SelectRandomK;
     TableLayout tableLayout;
+    TextView rotation1, remainder1, rotation2, remainder2, rotation3, remainder3, rotationBeforeLast, remainderBeforeLast, rotationLast, remainderLast;
+    String defaultShor3point2, defaultShor3point3, defaultShor4point3, defaultShor4point4;
     List<Integer> answer = new ArrayList<>();
 
 
     //set prime number strings
-    final String[] primeNumbers = {"-", "13" ,"17" ,"19","23","29","31","37","41","43","47"
+    final String[] primeNumbers = {"13" ,"17" ,"19","23","29","31","37","41","43","47"
             ,"53","59","61","67","71","73","79","83","89","97","101","103","107"
     };;
 
@@ -63,27 +67,53 @@ public class shorFragment1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        //context = context.getApplicationContext();
+        context = getActivity().getApplicationContext();
         view = inflater.inflate(R.layout.fragment_shor1, container, true);
         loadObject();
 
-        //setHideFab();
-   //     setHideStep2();
-    //    setHideStep3();
-    //    setHideStep4();
+        setHideStep2();
+        setHideStep3();
+        setHideStep4();
 
         NumberPicker1.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
                 //hideAll();
                 chosenNumber1 = Integer.parseInt(primeNumbers[newVal]);
-            //    NumberPicker1.setDisplayedValues(primeNumbers);
-                selectPrimeNumber1.setText("Select Your First Prime Number" + primeNumbers[newVal]);
+                selectPrimeNumber1.setText("Select Your First Prime Number " + primeNumbers[newVal]);
 
             }
         });
 
+        NumberPicker2.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                //hideAll();
+                chosenNumber2 = Integer.parseInt(primeNumbers[newVal]);
+                selectPrimeNumber2.setText("Select Your Second Prime Number " + primeNumbers[newVal]);
 
+            }
+        });
+
+        SelectRandomK.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                //nothing
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                //nothing
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                setHideStep2();
+                setHideStep3();
+                setHideStep4();
+
+            }
+        });
 
 
 
@@ -140,8 +170,12 @@ public class shorFragment1 extends Fragment {
 
         NumberPicker1 = (NumberPicker) view.findViewById(R.id.NumberPicker1);
         NumberPicker1.setMinValue(0);
+        NumberPicker1.setMaxValue(primeNumbers.length - 1);
+        NumberPicker1.setDisplayedValues(primeNumbers);
         NumberPicker2 = (NumberPicker) view.findViewById(R.id.NumberPicker2);
         NumberPicker2.setMinValue(0);
+        NumberPicker2.setMaxValue(primeNumbers.length - 1);
+        NumberPicker2.setDisplayedValues(primeNumbers);
 
         selectPrimeNumber1 = (TextView) view.findViewById(R.id.selectPrimeNumber1);
         selectPrimeNumber2 = (TextView) view.findViewById(R.id.selectPrimeNumber2);
@@ -163,15 +197,19 @@ public class shorFragment1 extends Fragment {
         ShorStep3 = (TextView) view.findViewById(R.id.ShorStep3);
         ShorStep3Explanation = (TextView) view.findViewById(R.id.ShorStep3Explanation);
         Shor3point2 = (TextView) view.findViewById(R.id.Shor3point2);
+        defaultShor3point2 = Shor3point2.getText().toString();
         warning3 = (TextView) view.findViewById(R.id.warning3);
         Shor3point3 = (TextView) view.findViewById(R.id.Shor3point3);
+        defaultShor3point3 = Shor3point3.getText().toString();
 
         Shor4point1 = (TextView) view.findViewById(R.id.Shor4point1);
         ShorStep4 = (TextView) view.findViewById(R.id.ShorStep4);
         ShorStep4Explanation = (TextView) view.findViewById(R.id.ShorStep4Explanation);
         Shor4point2 = (TextView) view.findViewById(R.id.Shor4point2);
         Shor4point3 = (TextView) view.findViewById(R.id.Shor4point3);
+        defaultShor4point3 = Shor4point3.getText().toString();
         Shor4point4 = (TextView) view.findViewById(R.id.Shor4point4);
+        defaultShor4point4 = Shor4point4.getText().toString();
         ShorStepFinal = (TextView) view.findViewById(R.id.ShorStepFinal);
 
         view.findViewById(R.id.ShorToHome1);
@@ -180,9 +218,30 @@ public class shorFragment1 extends Fragment {
         SelectRandomK = view.findViewById(R.id.SelectRandomK);
         tableLayout = view.findViewById(R.id.tableLayout);
 
+        rotation1 = (TextView) view.findViewById(R.id.rotation1);
+        remainder1 = (TextView) view.findViewById(R.id.remainder1);
+        rotation2 = (TextView) view.findViewById(R.id.rotation2);
+        remainder2 = (TextView) view.findViewById(R.id.remainder2);
+        rotation3 = (TextView) view.findViewById(R.id.rotation3);
+        remainder3 = (TextView) view.findViewById(R.id.remainder3);
+        rotationBeforeLast = (TextView) view.findViewById(R.id.rotationBeforeLast);
+        remainderBeforeLast = (TextView) view.findViewById(R.id.remainderBeforeLast);
+        rotationLast = (TextView) view.findViewById(R.id.rotationLast);
+        remainderLast = (TextView) view.findViewById(R.id.remainderLast);
 
 
     }
 
+    public void setHideStep2(){
+
+    }
+
+    public void setHideStep3(){
+
+    }
+
+    public void setHideStep4(){
+
+    }
 
 }

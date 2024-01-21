@@ -155,7 +155,7 @@ public class AttackFragment2 extends Fragment {
         // Set the Extended floating action button to
         // shrinked state initially
         mAddFab.shrink();
-        view.findViewById(R.id.attack2text).setVisibility(View.VISIBLE);
+
     }
 
     private void setShowFab(){
@@ -178,7 +178,7 @@ public class AttackFragment2 extends Fragment {
         // user clicks on the shrinked
         // parent FAB
         mAddFab.extend();
-        view.findViewById(R.id.attack2text).setVisibility(View.GONE);
+
         // make the boolean variable true as
         // we have set the sub FABs
         // visibility to GONE
