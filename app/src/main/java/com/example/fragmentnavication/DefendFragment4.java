@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
@@ -24,9 +25,9 @@ public class DefendFragment4 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_defend4, container, false);
-        nextBtn = view.findViewById(R.id.Defendragment4toNext);
-        previousBtn = view.findViewById(R.id.Defendfragement4Previous);
+        previousBtn = view.findViewById(R.id.Defendfragment4toPrevious);
         isAllFabsVisible=false;
+        imageView = view.findViewById(R.id.imageView);
         setHideFab();
 
         mAddFab.setOnClickListener(
@@ -91,12 +92,7 @@ public class DefendFragment4 extends Fragment {
         });
 
 
-        nextBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                replaceFragment(new DefendFragment5());
-            }
-        });
+
 
         previousBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,6 +104,7 @@ public class DefendFragment4 extends Fragment {
 
     }
     Button previousBtn,nextBtn;
+    ImageView imageView;
 
     FloatingActionButton backToHome, goToAttack, goToDefense,goToShor;
     ExtendedFloatingActionButton mAddFab;
@@ -155,7 +152,12 @@ public class DefendFragment4 extends Fragment {
         // Set the Extended floating action button to
         // shrinked state initially
         mAddFab.shrink();
-        view.findViewById(R.id.Defend4text).setVisibility(View.VISIBLE);
+
+        view.findViewById(R.id.ApplicationText).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.textView1).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.Defendfragment4toPrevious).setVisibility(View.VISIBLE);
+        imageView.setVisibility(View.VISIBLE);
+
 
     }
 
@@ -179,7 +181,11 @@ public class DefendFragment4 extends Fragment {
         // user clicks on the shrinked
         // parent FAB
         mAddFab.extend();
-        view.findViewById(R.id.Defend4text).setVisibility(View.GONE);
+
+        view.findViewById(R.id.ApplicationText).setVisibility(View.GONE);
+        view.findViewById(R.id.textView1).setVisibility(View.GONE);
+        view.findViewById(R.id.Defendfragment4toPrevious).setVisibility(View.GONE);
+        imageView.setVisibility(View.GONE);
         // we have set the sub FABs
         // visibility to GONE
 

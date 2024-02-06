@@ -1,5 +1,6 @@
 package com.example.fragmentnavication;
 
+import android.media.Image;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
@@ -24,7 +26,8 @@ public class DefendFragment3 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_defend3, container, false);
-        nextBtn = view.findViewById(R.id.Defendragment3toNext);
+        nextBtn = view.findViewById(R.id.Defendfragment3toNext);
+        imageView = view.findViewById(R.id.imageView);
         previousBtn = view.findViewById(R.id.Defendfragment3toPrevious);
         isAllFabsVisible=false;
         setHideFab();
@@ -108,6 +111,7 @@ public class DefendFragment3 extends Fragment {
 
     }
     Button nextBtn,previousBtn;
+    ImageView imageView;
 
     FloatingActionButton backToHome, goToAttack, goToDefense,goToShor;
     ExtendedFloatingActionButton mAddFab;
@@ -148,6 +152,13 @@ public class DefendFragment3 extends Fragment {
         DirectToDefenseActionText.setVisibility(View.GONE);
         DirectToShorActionText.setVisibility(View.GONE);
 
+        view.findViewById(R.id.ApplicationText).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.textView1).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.Defendfragment3toNext).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.Defendfragment3toPrevious).setVisibility(View.VISIBLE);
+        imageView.setVisibility(View.VISIBLE);
+
+
         // make the boolean variable as false, as all the
         // action name texts and all the sub FABs are
         // invisible
@@ -155,7 +166,7 @@ public class DefendFragment3 extends Fragment {
         // Set the Extended floating action button to
         // shrinked state initially
         mAddFab.shrink();
-        view.findViewById(R.id.Defend3text).setVisibility(View.VISIBLE);
+
     }
 
     private void setShowFab(){
@@ -178,7 +189,13 @@ public class DefendFragment3 extends Fragment {
         // user clicks on the shrinked
         // parent FAB
         mAddFab.extend();
-        view.findViewById(R.id.Defend3text).setVisibility(View.GONE);
+
+        view.findViewById(R.id.ApplicationText).setVisibility(View.GONE);
+        view.findViewById(R.id.textView1).setVisibility(View.GONE);
+        view.findViewById(R.id.Defendfragment3toNext).setVisibility(View.GONE);
+        view.findViewById(R.id.Defendfragment3toPrevious).setVisibility(View.GONE);
+        imageView.setVisibility(View.GONE);
+
         // make the boolean variable true as
         // we have set the sub FABs
         // visibility to GONE

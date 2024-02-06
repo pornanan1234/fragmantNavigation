@@ -1,29 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black"
+    android:backgroundTint="#000000"
+    android:backgroundTintMode="multiply"
     tools:context=".DefendFragment1">
 
-    <include layout="@layout/floatbutton"/>
     <!-- TODO: Update blank fragment layout -->
 
+
+    <include layout="@layout/floatbutton" />
+
+
     <TextView
-        android:id="@+id/Defend1text"
-        android:layout_width="wrap_content"
+        android:id="@+id/ApplicationText"
+        android:layout_width="262dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Defend 1"
-        android:textSize="32dp" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="24dp"
+        android:fontFamily="@font/baloo_bhai_2_extrabold"
+        android:text="Usage in Defender's Perspective"
+        android:textAlignment="center"
+        android:textColor="@color/light_purple"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ApplicationText"
+        android:layout_above="@id/Defendfragment1toNext"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/baloo_bhai_2"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="In the present, RSA encryption is used to secure messages sent between two individuals. However, the presence of quantum computers poses a threat to the RSA. \n\nDespite that, the knowledge of quantum computing also presents us with a more secure encryption method: quantum cryptography.
+\n\n Quantum cryptography is a method of encryption that uses the properties of quantum mechanics to secure data transmission.
+"
+        android:textAlignment="center"
+        android:textColor="@color/light_purple"
+        android:textSize="18sp"
+        />
+
+
 
     <Button
         android:id="@+id/Defendfragment1toNext"
         android:layout_width="150dp"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="50dp"
-        android:text="@string/next" />
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="57dp"
+        android:layout_marginBottom="40dp"
+        android:layout_x="250dp"
+        android:layout_y="665dp"
+        android:backgroundTint="@color/light_purple"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:text="@string/next"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+
+
 
 </RelativeLayout>
+
