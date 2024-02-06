@@ -16,8 +16,6 @@ import android.widget.TextView;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import pl.droidsonroids.gif.GifImageView;
-
 public class fragment2 extends Fragment {
     View view;
 
