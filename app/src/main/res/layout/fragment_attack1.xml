@@ -14,16 +14,17 @@
 
     <include layout="@layout/floatbutton" />
 
-    <pl.droidsonroids.gif.GifImageView
+    <ImageView
 
         android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="432dp"
-        android:layout_above="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Attackfragment1toNext"
         android:layout_below="@+id/textView1"
-        android:layout_marginTop="-23dp"
-        android:layout_marginBottom="-120dp"
-        android:src="@drawable/giphy" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="0dp"
+        android:src="@drawable/founders" />
 
     <TextView
         android:id="@+id/ApplicationText"
@@ -32,8 +33,6 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_margin="24dp"
-        android:layout_x="135dp"
-        android:layout_y="13dp"
         android:fontFamily="@font/baloo_bhai_2_extrabold"
         android:text="Usage in Attacker's Perspective"
         android:textAlignment="center"
@@ -43,39 +42,24 @@
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="350dp"
-        android:layout_height="109dp"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/ApplicationText"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="40dp"
         android:layout_marginTop="15dp"
-        android:layout_x="42dp"
-        android:layout_y="105dp"
-        android:fontFamily="@font/baloo_bhai_2_semibold"
-        android:gravity="center|center_horizontal|center_vertical"
-        android:text="@string/intro_page_one_one"
-        android:textAlignment="center"
-        android:textColor="@color/blue"
-        android:textSize="20sp"
-        android:textStyle="italic"
-        />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="350dp"
-        android:layout_height="351dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="80dp"
-        android:layout_x="36dp"
-        android:layout_y="20dp"
         android:fontFamily="@font/baloo_bhai_2"
         android:gravity="center|center_horizontal|center_vertical"
-        android:text="@string/intro_page_one_two"
+        android:text="When sending messages among devices, we need to always make sure that our messages cannot be accessed by users other than the sender and the recipients.
+\n\n
+A widely used cryptosystem, a method for encrypting messages, is RSA or Rivest–Shamir–Adleman.
+"
         android:textAlignment="center"
-        android:textColor="@color/blue"
-        android:textSize="18sp" />
+        android:textColor="@color/light_red"
+        android:textSize="18sp"
+        />
+
+
 
     <Button
         android:id="@+id/Attackfragment1toNext"
@@ -84,17 +68,19 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginRight="57dp"
         android:layout_marginBottom="40dp"
         android:layout_x="250dp"
         android:layout_y="665dp"
-        android:backgroundTint="@color/blue"
+        android:backgroundTint="@color/light_red"
         android:fontFamily="@font/baloo_bhai_2_semibold"
         android:text="@string/next"
         android:textColor="@color/black"
         android:textSize="20sp" />
+
+
 
 
 </RelativeLayout>

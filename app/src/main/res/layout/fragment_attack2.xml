@@ -15,15 +15,15 @@
     <include layout="@layout/floatbutton" />
 
     <ImageView
+
         android:id="@+id/imageView"
-        android:layout_width="350dp"
+        android:layout_width="330dp"
+        android:layout_below="@id/ApplicationText"
+        android:layout_height="350dp"
         android:layout_centerHorizontal="true"
-        android:layout_height="200dp"
-        android:layout_above="@+id/textView2"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:src="@drawable/image_2" />
+        android:layout_marginTop="-25dp"
+        android:layout_marginBottom="0dp"
+        android:src="@drawable/rsa_diagram" />
 
     <TextView
         android:id="@+id/ApplicationText"
@@ -32,8 +32,6 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_margin="24dp"
-        android:layout_x="135dp"
-        android:layout_y="13dp"
         android:fontFamily="@font/baloo_bhai_2_extrabold"
         android:text="Usage in Attacker's Perspective"
         android:textAlignment="center"
@@ -43,39 +41,41 @@
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="350dp"
-        android:layout_height="109dp"
-        android:layout_below="@+id/ApplicationText"
+        android:layout_width="347dp"
+        android:layout_height="414dp"
+        android:layout_above="@+id/Attackfragment2toNext"
+        android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="15dp"
-        android:layout_x="42dp"
-        android:layout_y="105dp"
-        android:fontFamily="@font/baloo_bhai_2_semibold"
-        android:gravity="center|center_horizontal|center_vertical"
-        android:text="@string/intro_page_one_one"
-        android:textAlignment="center"
-        android:textColor="@color/blue"
-        android:textSize="20sp"
-        android:textStyle="italic"
-        />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="350dp"
-        android:layout_height="351dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="80dp"
-        android:layout_x="36dp"
-        android:layout_y="20dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="-41dp"
         android:fontFamily="@font/baloo_bhai_2"
         android:gravity="center|center_horizontal|center_vertical"
-        android:text="@string/intro_page_one_two"
+        android:text="RSA is an asymmetric encryption algorithm in which each user has two keys: public and private key. When sending information, the receiver’s public key is used by the sender to encrypt the message. When obtaining the information, the receiver will need to use his or her private key to decrypt the message. "
         android:textAlignment="center"
-        android:textColor="@color/blue"
+        android:textColor="@color/light_red"
         android:textSize="18sp" />
+
+
+
+    <Button
+        android:id="@+id/Attackfragment2toNext"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="57dp"
+        android:layout_marginBottom="40dp"
+        android:layout_x="250dp"
+        android:layout_y="665dp"
+        android:backgroundTint="@color/light_red"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:text="@string/next"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/Attackfragment2toPrevious"
@@ -87,27 +87,12 @@
         android:layout_marginStart="20dp"
         android:layout_marginRight="234dp"
         android:layout_marginBottom="28dp"
-        android:backgroundTint="@color/blue"
+        android:backgroundTint="@color/light_red"
         android:fontFamily="@font/baloo_bhai_2_semibold"
         android:text="@string/previous"
         android:textColor="@color/black"
         android:textSize="20sp" />
 
-
-    <Button
-        android:id="@+id/Attackfragment2toNext"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="38dp"
-        android:layout_marginBottom="28dp"
-        android:backgroundTint="@color/blue"
-        android:fontFamily="@font/baloo_bhai_2_semibold"
-        android:text="@string/next"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
 
 </RelativeLayout>
 

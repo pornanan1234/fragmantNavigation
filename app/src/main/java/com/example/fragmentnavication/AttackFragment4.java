@@ -25,7 +25,6 @@ public class AttackFragment4 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_attack4, container, false);
-        nextBtn = view.findViewById(R.id.Attackfragment4toNext);
         previousBtn = view.findViewById(R.id.Attackfragment4Previous);
         isAllFabsVisible=false;
         setHideFab();
@@ -91,12 +90,7 @@ public class AttackFragment4 extends Fragment {
         });
 
 
-        nextBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                replaceFragment(new AttackFragment5());
-            }
-        });
+
 
         previousBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,6 +142,11 @@ public class AttackFragment4 extends Fragment {
         DirectToDefenseActionText.setVisibility(View.GONE);
         DirectToShorActionText.setVisibility(View.GONE);
 
+        view.findViewById(R.id.ApplicationText).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.textView1).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.Attackfragment4Previous).setVisibility(View.VISIBLE);
+
+
         // make the boolean variable as false, as all the
         // action name texts and all the sub FABs are
         // invisible
@@ -178,6 +177,10 @@ public class AttackFragment4 extends Fragment {
         // user clicks on the shrinked
         // parent FAB
         mAddFab.extend();
+        view.findViewById(R.id.ApplicationText).setVisibility(View.GONE);
+        view.findViewById(R.id.textView1).setVisibility(View.GONE);
+        view.findViewById(R.id.Attackfragment4Previous).setVisibility(View.GONE);
+
 
         // we have set the sub FABs
         // visibility to GONE

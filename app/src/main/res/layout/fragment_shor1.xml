@@ -84,12 +84,20 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/light_red"
+                    android:textColor="@color/mint_green"
                     android:textSize="15sp"
                     android:gravity="center"
                     android:fontFamily="@font/baloo_bhai_2_semibold"
                     android:text="In this section, we will explore the Shor's Algorithm. The following process is how a classic computer factorizes a large composite number. \n" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/mint_green"
+                    android:textSize="15sp"
+                    android:gravity="center"
+                    android:fontFamily="@font/baloo_bhai_2_semibold"
+                    android:text="Developed by Peter Shor, an American mathematician, Shor’s Algorithm was designed to find prime factors of very large composite numbers. Although the algorithm can also be used by a classic computer, the process is still very slow. The unique properties of a quantum computer can expedite the process implementing Shor’s algorithm. This interactive section will walk you through each step of the algorithm.\n"/>
 
                 <TextView
                     android:layout_width="wrap_content"

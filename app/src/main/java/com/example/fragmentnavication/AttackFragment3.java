@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
@@ -114,6 +115,7 @@ public class AttackFragment3 extends Fragment {
     TextView directToHomeActionText, DirectToAttackActionText, DirectToDefenseActionText,DirectToShorActionText;
     // to check whether sub FABs are visible or not
     Boolean isAllFabsVisible;
+    ImageView imageView;
 
     private void replaceFragment(Fragment fragment){
 
@@ -148,6 +150,12 @@ public class AttackFragment3 extends Fragment {
         DirectToDefenseActionText.setVisibility(View.GONE);
         DirectToShorActionText.setVisibility(View.GONE);
 
+        view.findViewById(R.id.ApplicationText).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.textView1).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.Attackfragment3toNext).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.Attackfragment3toPrevious).setVisibility(View.VISIBLE);
+
+
         // make the boolean variable as false, as all the
         // action name texts and all the sub FABs are
         // invisible
@@ -155,7 +163,7 @@ public class AttackFragment3 extends Fragment {
         // Set the Extended floating action button to
         // shrinked state initially
         mAddFab.shrink();
-        view.findViewById(R.id.attack3text).setVisibility(View.VISIBLE);
+
 
     }
 
@@ -179,7 +187,13 @@ public class AttackFragment3 extends Fragment {
         // user clicks on the shrinked
         // parent FAB
         mAddFab.extend();
-        view.findViewById(R.id.attack3text).setVisibility(View.GONE);
+
+        view.findViewById(R.id.ApplicationText).setVisibility(View.GONE);
+        view.findViewById(R.id.textView1).setVisibility(View.GONE);
+        view.findViewById(R.id.Attackfragment3toNext).setVisibility(View.GONE);
+        view.findViewById(R.id.Attackfragment3toPrevious).setVisibility(View.GONE);
+
+
         // make the boolean variable true as
         // we have set the sub FABs
         // visibility to GONE

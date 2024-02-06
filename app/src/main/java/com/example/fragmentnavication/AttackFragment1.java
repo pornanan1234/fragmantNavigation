@@ -1,5 +1,6 @@
 package com.example.fragmentnavication;
 
+import android.media.Image;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
@@ -26,6 +28,7 @@ public class AttackFragment1 extends Fragment {
         view = inflater.inflate(R.layout.fragment_attack1, container, false);
         isAllFabsVisible=false;
         nextBtn = view.findViewById(R.id.Attackfragment1toNext);
+        imageView = view.findViewById(R.id.imageView);
         setHideFab();
 
         mAddFab.setOnClickListener(
@@ -105,6 +108,8 @@ public class AttackFragment1 extends Fragment {
     View view;
     Button nextBtn;
 
+    ImageView imageView;
+
     FloatingActionButton backToHome, goToAttack, goToDefense,goToShor;
     ExtendedFloatingActionButton mAddFab;
     TextView directToHomeActionText, DirectToAttackActionText, DirectToDefenseActionText,DirectToShorActionText;
@@ -144,6 +149,13 @@ public class AttackFragment1 extends Fragment {
         DirectToDefenseActionText.setVisibility(View.GONE);
         DirectToShorActionText.setVisibility(View.GONE);
 
+
+        view.findViewById(R.id.ApplicationText).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.textView1).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.Attackfragment1toNext).setVisibility(View.VISIBLE);
+        imageView.setVisibility(View.VISIBLE);
+
+
         // make the boolean variable as false, as all the
         // action name texts and all the sub FABs are
         // invisible
@@ -175,6 +187,11 @@ public class AttackFragment1 extends Fragment {
         // user clicks on the shrinked
         // parent FAB
         mAddFab.extend();
+
+        view.findViewById(R.id.ApplicationText).setVisibility(View.GONE);
+        view.findViewById(R.id.textView1).setVisibility(View.GONE);
+        view.findViewById(R.id.Attackfragment1toNext).setVisibility(View.GONE);
+        imageView.setVisibility(View.GONE);
 
         // make the boolean variable true as
         // we have set the sub FABs

@@ -1,19 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black"
+    android:backgroundTint="#000000"
+    android:backgroundTintMode="multiply"
     tools:context=".AttackFragment3">
 
-    <include layout="@layout/floatbutton"/>
     <!-- TODO: Update blank fragment layout -->
+
+
+    <include layout="@layout/floatbutton" />
+
+
+
     <TextView
-        android:id="@+id/attack3text"
-        android:layout_width="wrap_content"
+        android:id="@+id/ApplicationText"
+        android:layout_width="262dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Attack 3"
-        android:textSize="32dp" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="24dp"
+        android:fontFamily="@font/baloo_bhai_2_extrabold"
+        android:text="Usage in Attacker's Perspective"
+        android:textAlignment="center"
+        android:textColor="@color/light_red"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ApplicationText"
+        android:layout_above="@id/Attackfragment3toNext"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/baloo_bhai_2"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="The factorization of prime numbers plays an important role in this encryption process. The private key contains two large prime numbers, while the public key has the product of those two prime numbers. \n\nTo decrypt the message, the two prime numbers in the private key are needed. \n\nMeanwhile, the composite number is so large that modern day computers would take years to factor. This is what makes RSA hard to break.
+
+
+"
+        android:textAlignment="center"
+        android:textColor="@color/light_red"
+        android:textSize="18sp"
+        />
+
+
+
+    <Button
+        android:id="@+id/Attackfragment3toNext"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="57dp"
+        android:layout_marginBottom="40dp"
+        android:layout_x="250dp"
+        android:layout_y="665dp"
+        android:backgroundTint="@color/light_red"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:text="@string/next"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/Attackfragment3toPrevious"
@@ -25,26 +82,13 @@
         android:layout_marginStart="20dp"
         android:layout_marginRight="234dp"
         android:layout_marginBottom="28dp"
-        android:backgroundTint="@color/blue"
+        android:backgroundTint="@color/light_red"
         android:fontFamily="@font/baloo_bhai_2_semibold"
         android:text="@string/previous"
         android:textColor="@color/black"
         android:textSize="20sp" />
 
 
-    <Button
-        android:id="@+id/Attackfragment3toNext"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="38dp"
-        android:layout_marginBottom="28dp"
-        android:backgroundTint="@color/blue"
-        android:fontFamily="@font/baloo_bhai_2_semibold"
-        android:text="@string/next"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
 
 </RelativeLayout>
+
