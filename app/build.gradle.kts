@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.fragmentnavication"
+    namespace = "com.quantum.fragmentnavication"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.fragmentnavication"
+        applicationId = "com.quantum.fragmentnavication"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

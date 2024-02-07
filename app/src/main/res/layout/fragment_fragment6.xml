@@ -7,7 +7,7 @@
     android:background="@color/black"
     android:backgroundTint="#000000"
     android:backgroundTintMode="multiply"
-    tools:context=".fragment6">
+    tools:context="com.quantum.fragmentnavication.fragment6">
 
     <!-- TODO: Update blank fragment layout -->
 
