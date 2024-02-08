@@ -122,6 +122,7 @@
                 <NumberPicker
                     android:id="@+id/NumberPicker1"
                     android:layout_width="wrap_content"
+                    android:theme="@style/AppTheme.Picker"
                     android:layout_gravity="center"
                     android:textColor="@color/yellow"
                     android:textSize="20sp"
@@ -141,6 +142,7 @@
                 <NumberPicker
                     android:id="@+id/NumberPicker2"
                     android:layout_width="wrap_content"
+                    android:theme="@style/AppTheme.Picker"
                     android:layout_height="100dp"
                     android:layout_gravity="center"
                     android:background="#00ECD0D0"
@@ -166,7 +168,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/baloo_bhai_2_extrabold"
                     android:gravity="center"
-                    android:text="2453"
+                    android:text="-"
                     android:textColor="@color/white"
                     android:textSize="24dp"
                     android:textStyle="italic" />
@@ -214,15 +216,49 @@
                     android:textSize="16sp"
                     android:layout_gravity="left"
                     android:fontFamily="@font/baloo_bhai_2_semibold"
-                    android:text="Randomly choose an integer (k) between 1 and TB1 (N) "/>
+                    android:text="Randomly choose an integer (k) between 1 and TB1 (N)."/>
 
                 <EditText
                     android:id="@+id/SelectRandomK"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:textColor="@color/white"
-                    android:backgroundTint="@color/white"
+                    android:theme="@style/AppTheme.Picker"
+
                     android:text="" />
+
+                <TextView
+                    android:id="@+id/ShorStep1Explanation2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/yellow"
+                    android:textSize="16sp"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/baloo_bhai_2_semibold"
+                    android:text="\nCheck if the GCD of k and the composite number is equal to 1. In this case, it is, so we can continue.\n"/>
+
+
+
+                <TextView
+                    android:id="@+id/warning0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/light_red"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/baloo_bhai_2"
+                    android:textStyle="italic"
+                    android:gravity="center"
+                    android:text="\n[Warning 0!]\nIf the GCD of k and N is not equal to 1, please choose a new value for k. There are two reasons for this: \n 1. That k value is one of the keys, so for demonstration purposes it's better to choose a more random number. \n 2. That number has a key in its factors.\n"/>
+
+                <TextView
+                    android:id="@+id/GCD"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/baloo_bhai_2_extrabold"
+                    android:gravity="center"
+                    android:text="GCD = "
+                    android:textColor="@color/white"
+                    android:textSize="24dp"
+                    android:textStyle="italic" />
 
 
                 <!-->starting step 2<!-->
@@ -256,7 +292,7 @@
                     android:textSize="16sp"
                     android:layout_gravity="left"
                     android:fontFamily="@font/baloo_bhai_2_semibold"
-                    android:text="Find how many cycles should be completed until the equation below gives a y value of '1'. \n\n In this step, a variable q is created, which initially has a value of 1. The y obtained from the previous round is then used as the value q for the next round throughout the rest of the process.\n"/>
+                    android:text="Find how many cycles should be completed until the equation below gives a y value of '1'. \n\n In this step, a variable q is created, which initially has a value of 1. The y obtained from the previous round is then used as the value q for the next round throughout the rest of the process."/>
 
 
                 <TextView
@@ -265,21 +301,12 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/baloo_bhai_2_extrabold"
                     android:gravity="center"
-                    android:text="f(x) = (q*k) mod N\n"
+                    android:text="\nf(x) = (q*k) mod N"
                     android:textColor="@color/blue"
                     android:textSize="24dp"
                     android:textStyle="italic" />
 
-                <TextView
-                    android:id="@+id/warning1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/light_red"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/baloo_bhai_2"
-                    android:textStyle="italic"
-                    android:gravity="center"
-                    android:text="[Warning 1!] If the first round of completing the equation yields '1' right away, go back to Step 1 and choose a different value of 'k'."/>
+
 
                 <TextView
                     android:id="@+id/Shor2point2"
@@ -532,6 +559,17 @@
                 </TableLayout>
 
                 <TextView
+                    android:id="@+id/Step2CounterWarning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/yellow"
+                    android:textSize="16sp"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/baloo_bhai_2_semibold"
+                    android:text="\nIf the first round of completing the equation yields '1' right away OR if the number of rounds repeated until the y results in 1 is even, a different value of 'k' needs to be chosen. However, this case does not fall in either categories, so we can continue."/>
+
+
+                <TextView
                     android:id="@+id/warning2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -540,7 +578,7 @@
                     android:fontFamily="@font/baloo_bhai_2"
                     android:textStyle="italic"
                     android:gravity="center"
-                    android:text="\n[Warning 2!] If the number of rotations is even, go back to Step 1 and choose different value of 'k'"/>
+                    android:text="\n[Warning 2!] \nIf the number of rotations is even, go back to Step 1 and choose different value of 'k'"/>
                 <TextView
                     android:id="@+id/Shor2point3"
                     android:layout_width="match_parent"
@@ -597,6 +635,17 @@
                     android:textStyle="italic"/>
 
                 <TextView
+                    android:id="@+id/Step3CounterWarning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/yellow"
+                    android:textSize="16sp"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/baloo_bhai_2_semibold"
+                    android:text="If p + 1 = N, then a different value of k needs to be chosen. However, this is not the case so we can continue. "/>
+
+
+                <TextView
                     android:id="@+id/warning3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -605,7 +654,7 @@
                     android:fontFamily="@font/baloo_bhai_2"
                     android:textStyle="italic"
                     android:gravity="center"
-                    android:text="[Warning 3!] If p + 1 = N, then go back to Step 1 and choose a different value of k."/>
+                    android:text="[Warning 3!]\n If p + 1 = N, then go back to Step 1 and choose a different value of k."/>
 
                 <TextView
                     android:id="@+id/Shor3point3"
@@ -657,7 +706,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/baloo_bhai_2_extrabold"
                     android:gravity="center"
-                    android:text="\nf₁ = GCD (p+1, N)\nf₂ = GCD (p-1, N)\n\n"
+                    android:text="\nf₁ = GCD (p+1, N)\nf₂ = GCD (p-1, N)\n"
                     android:textColor="@color/blue"
                     android:textSize="24dp"
                     android:textStyle="italic"/>

@@ -1,6 +1,9 @@
 package com.quantum.fragmentnavication;
 
+import static java.lang.Integer.parseInt;
+
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -21,6 +24,7 @@ import android.widget.TextView;
 
 import com.quantum.fragmentnavication.R;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,16 +41,21 @@ public class shorFragment1 extends Fragment {
     View view;
     NumberPicker NumberPicker1, NumberPicker2;
     TextView selectPrimeNumber1, selectPrimeNumber2, Composite;
-    TextView ShorStep1, ShorStep1Explanation;
-    TextView Shor2point1, ShorStep2, ShorStep2Explanation, ShorStep2Formula, warning1, Shor2point2, warning2, Shor2point3;
-    TextView Shor3point1, ShorStep3, ShorStep3Explanation, Shor3point2, warning3, Shor3point3;
+    int composite_int;
+    TextView ShorStep1, ShorStep1Explanation, warning0, GCD, ShorStep1Explanation2;
+    TextView Shor2point1, ShorStep2, ShorStep2Explanation, ShorStep2Formula, Shor2point2, warning2, Shor2point3, Step2CounterWarning;
+    TextView Shor3point1, ShorStep3, ShorStep3Explanation, Shor3point2, warning3, Shor3point3, Step3CounterWarning;
     TextView Shor4point1, ShorStep4, ShorStep4Explanation, Shor4point2, Shor4point3, Shor4point4, ShorStepFinal;
     Button ShorToHome1, ShorToHome2;
     EditText SelectRandomK;
     TableLayout tableLayout;
+
+    TextView conclusion1,conclusion2, conclusion3, conclusion4, conclusion5, conclusion6;
     TextView rotation1, remainder1, rotation2, remainder2, rotation3, remainder3, rotationBeforeLast, remainderBeforeLast, rotationLast, remainderLast;
     String defaultShor3point2, defaultShor3point3, defaultShor4point3, defaultShor4point4;
     List<Integer> answer = new ArrayList<>();
+
+    int numberInput;
 
 
     //set prime number strings
@@ -65,17 +74,27 @@ public class shorFragment1 extends Fragment {
         view = inflater.inflate(R.layout.fragment_shor1, container, true);
         loadObject();
 
+        setHideAll();
+        setHideStep1();
         setHideStep2();
         setHideStep3();
         setHideStep4();
+        setHideConclusion();
+        int whiteColor = getResources().getColor((R.color.white));
+        SelectRandomK.setBackgroundTintList(ColorStateList.valueOf(whiteColor));
 
         NumberPicker1.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
                 //hideAll();
-                chosenNumber1 = Integer.parseInt(primeNumbers[newVal]);
-                selectPrimeNumber1.setText("Select Your First Prime Number " + primeNumbers[newVal]);
-
+                chosenNumber1 = parseInt(primeNumbers[newVal]);
+                selectPrimeNumber1.setText("Select Your First Prime Number: " + primeNumbers[newVal]);
+                if (chosenNumber1 != 0 && chosenNumber2 != 0){
+                    composite_int = chosenNumber1 * chosenNumber2;
+                    Composite.setText(String.valueOf(composite_int));
+                    ShorStep1Explanation.setText("Randomly choose an integer (k) between 1 and " + composite_int);
+                    setShowStep1();
+                }
             }
         });
 
@@ -83,9 +102,14 @@ public class shorFragment1 extends Fragment {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
                 //hideAll();
-                chosenNumber2 = Integer.parseInt(primeNumbers[newVal]);
-                selectPrimeNumber2.setText("Select Your Second Prime Number " + primeNumbers[newVal]);
-
+                chosenNumber2 = parseInt(primeNumbers[newVal]);
+                selectPrimeNumber2.setText("Select Your Second Prime Number: " + primeNumbers[newVal]);
+                if (chosenNumber1 != 0 && chosenNumber2 != 0){
+                    composite_int = chosenNumber1 * chosenNumber2;
+                    Composite.setText(String.valueOf(composite_int));
+                    ShorStep1Explanation.setText("Randomly choose an integer (k) between 1 and " + composite_int);
+                    setShowStep1();
+                }
             }
         });
 
@@ -105,6 +129,28 @@ public class shorFragment1 extends Fragment {
                 setHideStep2();
                 setHideStep3();
                 setHideStep4();
+                setHideConclusion();
+                warning0.setVisibility(View.GONE);
+                numberInput = Integer.parseInt(s.toString().trim());
+
+                if (s.length()>0 && numberInput >= composite_int) {
+                    SelectRandomK.setText(String.valueOf(composite_int-1));
+                }
+                else if (gcd(numberInput, composite_int) != 1) {
+                    warning0.setVisibility(View.VISIBLE);
+                    GCD.setVisibility(View.VISIBLE);
+                    GCD.setText("GCD = " + gcd(numberInput, composite_int));
+                }
+                else if (gcd(numberInput, composite_int) == 1) {
+                    GCD.setVisibility(View.VISIBLE);
+                    GCD.setText("GCD = " + gcd(numberInput, composite_int));
+                    ShorStep1Explanation2.setVisibility(View.VISIBLE);
+                    warning0.setVisibility(View.GONE);
+                    setShowStep2();
+                    step2();
+                }
+
+
 
             }
         });
@@ -177,15 +223,19 @@ public class shorFragment1 extends Fragment {
 
         ShorStep1 = (TextView) view.findViewById(R.id.ShorStep1);
         ShorStep1Explanation = (TextView) view.findViewById(R.id.ShorStep1Explanation);
+        ShorStep1Explanation2 = (TextView) view.findViewById(R.id.ShorStep1Explanation2);
+
+        warning0 = (TextView) view.findViewById(R.id.warning0);
+        GCD = (TextView) view.findViewById(R.id.GCD);
 
         Shor2point1 = (TextView) view.findViewById(R.id.Shor2point1);
         ShorStep2 = (TextView) view.findViewById(R.id.ShorStep2);
         ShorStep2Explanation = (TextView) view.findViewById(R.id.ShorStep2Explanation);
         ShorStep2Formula = (TextView) view.findViewById(R.id.ShorStep2Formula);
-        warning1 = (TextView) view.findViewById(R.id.warning1);
         Shor2point2 = (TextView) view.findViewById(R.id.Shor2point2);
         warning2 = (TextView) view.findViewById(R.id.warning2);
         Shor2point3 = (TextView) view.findViewById(R.id.Shor2point3);
+        Step2CounterWarning = (TextView) view.findViewById(R.id.Step2CounterWarning);
 
         Shor3point1 = (TextView) view.findViewById(R.id.Shor3point1);
         ShorStep3 = (TextView) view.findViewById(R.id.ShorStep3);
@@ -195,6 +245,7 @@ public class shorFragment1 extends Fragment {
         warning3 = (TextView) view.findViewById(R.id.warning3);
         Shor3point3 = (TextView) view.findViewById(R.id.Shor3point3);
         defaultShor3point3 = Shor3point3.getText().toString();
+        Step3CounterWarning = view.findViewById(R.id.Step3CounterWarning);
 
         Shor4point1 = (TextView) view.findViewById(R.id.Shor4point1);
         ShorStep4 = (TextView) view.findViewById(R.id.ShorStep4);
@@ -223,19 +274,226 @@ public class shorFragment1 extends Fragment {
         rotationLast = (TextView) view.findViewById(R.id.rotationLast);
         remainderLast = (TextView) view.findViewById(R.id.remainderLast);
 
+        conclusion1 = (TextView) view.findViewById(R.id.conclusion1);
+        conclusion2 = (TextView) view.findViewById(R.id.conclusion2);
+        conclusion3 = (TextView) view.findViewById(R.id.conclusion3);
+        conclusion4 = (TextView) view.findViewById(R.id.conclusion4);
+        conclusion5 = (TextView) view.findViewById(R.id.conclusion5);
+        conclusion6 = (TextView) view.findViewById(R.id.conclusion6);
+    }
+
+
+    public void setShowStep1(){
+        ShorStep1.setVisibility(View.VISIBLE);
+        ShorStep1Explanation.setVisibility(View.VISIBLE);
+        SelectRandomK.setVisibility(View.VISIBLE);
+        warning0.setVisibility(View.GONE);
+        GCD.setVisibility(View.GONE);
+        ShorStep1Explanation2.setVisibility(View.GONE);
+    }
+    public void setShowStep2(){
+        Shor2point1.setVisibility(View.VISIBLE);
+        ShorStep2.setVisibility(View.VISIBLE);
+        ShorStep2Explanation.setVisibility(View.VISIBLE);
+        ShorStep2Formula.setVisibility(View.VISIBLE);
+        Shor2point2.setVisibility(View.VISIBLE);
+        warning2.setVisibility(View.GONE);
+        Shor2point3.setVisibility(View.VISIBLE);
+        tableLayout.setVisibility(View.VISIBLE);
+        Step2CounterWarning.setVisibility(View.GONE);
 
     }
 
-    public void setHideStep2(){
+    public void setShowStep3(){
+        Shor3point1.setVisibility(View.VISIBLE);
+        ShorStep3.setVisibility(View.VISIBLE);
+        ShorStep3Explanation.setVisibility(View.VISIBLE);
+        Shor3point2.setVisibility(View.VISIBLE);
+        warning3.setVisibility(View.GONE);
+        Shor3point3.setVisibility(View.VISIBLE);
+        Step3CounterWarning.setVisibility(View.GONE);
 
     }
 
-    public void setHideStep3(){
+    public void setShowStep4(){
+        Shor4point1.setVisibility(View.VISIBLE);
+        ShorStep4.setVisibility(View.VISIBLE);
+        ShorStep4Explanation.setVisibility(View.VISIBLE);
+        Shor4point2.setVisibility(View.VISIBLE);
+        Shor4point3.setVisibility(View.VISIBLE);
+        Shor4point4.setVisibility(View.VISIBLE);
+        ShorStepFinal.setVisibility(View.VISIBLE);
 
     }
 
-    public void setHideStep4(){
+    public void setShowConclusion() {
+        conclusion1.setVisibility(View.VISIBLE);
+        conclusion2.setVisibility(View.VISIBLE);
+        conclusion3.setVisibility(View.VISIBLE);
+        conclusion4.setVisibility(View.VISIBLE);
+        conclusion5.setVisibility(View.VISIBLE);
+        conclusion6.setVisibility(View.VISIBLE);
+        ShorToHome2.setVisibility(View.VISIBLE);
+    }
+
+
+
+    public void setHideAll(){
+        ShorStep1.setVisibility(View.GONE);
+        ShorStep1Explanation.setVisibility(View.GONE);
+        ShorStep1Explanation2.setVisibility(View.GONE);
+        SelectRandomK.setVisibility(View.GONE);
+        GCD.setVisibility(View.GONE);
+
+        Shor2point1.setVisibility(View.GONE);
+        ShorStep2.setVisibility(View.GONE);
+        ShorStep2Explanation.setVisibility(View.GONE);
+        ShorStep2Formula.setVisibility(View.GONE);
+        Shor2point2.setVisibility(View.GONE);
+        warning2.setVisibility(View.GONE);
+        Shor2point3.setVisibility(View.GONE);
+
+        Shor3point1.setVisibility(View.GONE);
+        ShorStep3.setVisibility(View.GONE);
+        ShorStep3Explanation.setVisibility(View.GONE);
+        Shor3point2.setVisibility(View.GONE);
+        warning3.setVisibility(View.GONE);
+        Shor3point3.setVisibility(View.GONE);
+        tableLayout.setVisibility(View.GONE);
+        Step3CounterWarning.setVisibility(View.GONE);
+
+        Shor4point1.setVisibility(View.GONE);
+        ShorStep4.setVisibility(View.GONE);
+        ShorStep4Explanation.setVisibility(View.GONE);
+        Shor4point2.setVisibility(View.GONE);
+        Shor4point3.setVisibility(View.GONE);
+        Shor4point4.setVisibility(View.GONE);
+        ShorStepFinal.setVisibility(View.GONE);
+
+        conclusion1.setVisibility(View.GONE);
+        conclusion2.setVisibility(View.GONE);
+        conclusion3.setVisibility(View.GONE);
+        conclusion4.setVisibility(View.GONE);
+        conclusion5.setVisibility(View.GONE);
+        conclusion6.setVisibility(View.GONE);
+        ShorToHome2.setVisibility(View.GONE);
+        warning0.setVisibility(View.GONE);
 
     }
+    public void setHideStep1() {
+        ShorStep1.setVisibility(View.GONE);
+        ShorStep1Explanation.setVisibility(View.GONE);
+        ShorStep1Explanation2.setVisibility(View.GONE);
+        SelectRandomK.setVisibility(View.GONE);
+        warning0.setVisibility(View.GONE);
+    }
+
+    public void setHideStep2() {
+        Shor2point1.setVisibility(View.GONE);
+        ShorStep2.setVisibility(View.GONE);
+        ShorStep2Explanation.setVisibility(View.GONE);
+        ShorStep2Formula.setVisibility(View.GONE);
+        Shor2point2.setVisibility(View.GONE);
+        warning2.setVisibility(View.GONE);
+        Shor2point3.setVisibility(View.GONE);
+        tableLayout.setVisibility(View.GONE);
+        Step2CounterWarning.setVisibility(View.GONE);
+    }
+
+    public void setHideStep3() {
+        Shor3point1.setVisibility(View.GONE);
+        ShorStep3.setVisibility(View.GONE);
+        ShorStep3Explanation.setVisibility(View.GONE);
+        Shor3point2.setVisibility(View.GONE);
+        warning3.setVisibility(View.GONE);
+        Shor3point3.setVisibility(View.GONE);
+        Step3CounterWarning.setVisibility(View.GONE);
+
+    }
+
+    public void setHideStep4() {
+        Shor4point1.setVisibility(View.GONE);
+        ShorStep4.setVisibility(View.GONE);
+        ShorStep4Explanation.setVisibility(View.GONE);
+        Shor4point2.setVisibility(View.GONE);
+        Shor4point3.setVisibility(View.GONE);
+        Shor4point4.setVisibility(View.GONE);
+        ShorStepFinal.setVisibility(View.GONE);
+    }
+
+    public void setHideConclusion() {
+        conclusion1.setVisibility(View.GONE);
+        conclusion2.setVisibility(View.GONE);
+        conclusion3.setVisibility(View.GONE);
+        conclusion4.setVisibility(View.GONE);
+        conclusion5.setVisibility(View.GONE);
+        conclusion6.setVisibility(View.GONE);
+        ShorToHome2.setVisibility(View.GONE);
+    }
+
+    private int gcd(int one, int two){
+        BigInteger ONE = new BigInteger(String.valueOf(one));
+        BigInteger TWO = new BigInteger(String.valueOf(two));
+
+        return ONE.gcd(TWO).intValue();
+    }
+
+
+    int q_value, repeating_rounds, latest_remainder;
+
+    public void step2() {
+        q_value = 1;
+        latest_remainder = 0;
+        repeating_rounds = 0;
+        while (latest_remainder != 1) {
+            latest_remainder = (q_value*numberInput)%composite_int;
+            q_value = latest_remainder;
+            repeating_rounds++;
+        }
+        if (latest_remainder == 1) {
+            if (repeating_rounds%2 == 0) {
+                warning2.setVisibility(View.VISIBLE);
+            }
+            else {
+                Step2CounterWarning.setVisibility(View.VISIBLE);
+                setShowStep3();
+                step3();
+            }
+        }
+    }
+
+    int p_position, p_repeat, the_remainder;
+    public void step3() {
+        p_position = repeating_rounds/2;
+        p_repeat = 0;
+        q_value = 1;
+        while (p_repeat < p_position) {
+            the_remainder = (q_value*numberInput)%composite_int;
+            q_value = the_remainder;
+            p_repeat++;
+        }
+        if (the_remainder + 1 == composite_int) {
+            warning3.setVisibility(View.VISIBLE);
+            Shor3point3.setText("\np + 1 = N"+"\n"+the_remainder+"+ 1 != "+composite_int );
+        }
+        else {
+            Step3CounterWarning.setVisibility(View.VISIBLE);
+            Shor3point2.setText("Position of p = " + p_position + "\n p = "+ the_remainder+ "\n");
+            Shor3point3.setText("\np + 1 = N"+"\n"+the_remainder+"+ 1 != "+composite_int+ "\n");
+            setShowStep4();
+            step4();
+        }
+
+    }
+
+    int answer1, answer2;
+    public void step4(){
+        answer1 = gcd(the_remainder+1, composite_int);
+        Shor4point3.setText("f₁ = GCD (p+1, N)\n= GCD ("+(the_remainder+1)+","+composite_int+") \n= " +answer1);
+        answer2 = gcd(the_remainder-1, composite_int);
+        Shor4point4.setText("f₂ = GCD (p-1, N)\n= GCD ("+(the_remainder-1)+","+composite_int+") \n= "+answer2);
+        setShowConclusion();
+    }
+
 
 }
