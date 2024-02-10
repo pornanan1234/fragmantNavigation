@@ -329,12 +329,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:foregroundGravity="center"
                     android:visibility="visible">
 
                     <TableRow android:layout_width="match_parent">
 
                         <TextView
-                            android:padding="10dp"
+                            android:padding="0dp"
                             android:fontFamily="@font/baloo_bhai_2_semibold"
                             android:layout_gravity="center"
                             android:textColor="@color/blue"
@@ -351,7 +352,7 @@
                             android:fontFamily="@font/baloo_bhai_2_semibold"
                             android:textColor="@color/blue"
                             android:layout_gravity="center"
-                            android:text="Answer (Remainder)"/>
+                            android:text="Remainder"/>
 
                         <TextView
                             android:padding="10dp"
@@ -368,6 +369,7 @@
                         <TextView
                             android:id="@+id/rotation1"
                             android:padding="10dp"
+                            android:layout_width="wrap_content"
                             android:fontFamily="monospace"
                             android:textColor="@color/white"
                             android:text="equation 1"/>
@@ -383,13 +385,14 @@
                             android:padding="10dp"
                             android:fontFamily="monospace"
                             android:textColor="@color/white"
-                            android:text="remainder 1"/>
+                            android:text="rem 1"/>
 
                         <TextView
+                            android:id="@+id/count1"
                             android:padding="10dp"
                             android:fontFamily="@font/baloo_bhai_2_semibold"
                             android:textColor="@color/light_red"
-                            android:text="--- r = 1"/>
+                            android:text="--- 1"/>
 
 
 
@@ -414,13 +417,14 @@
                             android:padding="10dp"
                             android:fontFamily="monospace"
                             android:textColor="@color/white"
-                            android:text="remainder 2"/>
+                            android:text="rem 2"/>
 
                         <TextView
+                            android:id="@+id/count2"
                             android:padding="10dp"
                             android:fontFamily="@font/baloo_bhai_2_semibold"
                             android:textColor="@color/light_red"
-                            android:text="--- r = 2"/>
+                            android:text="--- 2"/>
                     </TableRow>
                     <TableRow android:layout_width="match_parent">
 
@@ -442,13 +446,14 @@
                             android:padding="10dp"
                             android:fontFamily="monospace"
                             android:textColor="@color/white"
-                            android:text="remainder 3"/>
+                            android:text="rem 3"/>
 
                         <TextView
+                            android:id="@+id/count3"
                             android:padding="10dp"
                             android:fontFamily="@font/baloo_bhai_2_semibold"
                             android:textColor="@color/light_red"
-                            android:text="--- r = 3"/>
+                            android:text="--- 3"/>
                     </TableRow>
                     <TableRow android:layout_width="match_parent">
 
@@ -505,7 +510,7 @@
                             android:padding="10dp"
                             android:fontFamily="monospace"
                             android:textColor="@color/white"
-                            android:text="equation before last"/>
+                            android:text="equation bef"/>
 
                         <TextView
                             android:padding="10dp"
@@ -518,13 +523,14 @@
                             android:padding="10dp"
                             android:fontFamily="monospace"
                             android:textColor="@color/white"
-                            android:text="remainder before last"/>
+                            android:text="rem bef"/>
 
                         <TextView
+                            android:id="@+id/countbfl"
                             android:padding="10dp"
                             android:fontFamily="@font/baloo_bhai_2_semibold"
                             android:textColor="@color/light_red"
-                            android:text="--- r = TBBeforeLast"/>
+                            android:text="--- B"/>
                     </TableRow>
                     <TableRow android:layout_width="match_parent">
 
@@ -546,13 +552,14 @@
                             android:padding="10dp"
                             android:fontFamily="monospace"
                             android:textColor="@color/white"
-                            android:text="remainder last"/>
+                            android:text="rem last"/>
 
                         <TextView
+                            android:id="@+id/countlast"
                             android:padding="10dp"
                             android:fontFamily="@font/baloo_bhai_2_semibold"
                             android:textColor="@color/light_red"
-                            android:text="--- r = TBLast"/>
+                            android:text="--- L"/>
                     </TableRow>
 
 
@@ -566,7 +573,7 @@
                     android:textSize="16sp"
                     android:layout_gravity="left"
                     android:fontFamily="@font/baloo_bhai_2_semibold"
-                    android:text="\nIf the first round of completing the equation yields '1' right away OR if the number of rounds repeated until the y results in 1 is even, a different value of 'k' needs to be chosen. However, this case does not fall in either categories, so we can continue."/>
+                    android:text="\nIf the number of rounds repeated until the y results in 1 is odd, a different value of 'k' needs to be chosen. However, it is even, so we can continue."/>
 
 
                 <TextView
@@ -578,7 +585,7 @@
                     android:fontFamily="@font/baloo_bhai_2"
                     android:textStyle="italic"
                     android:gravity="center"
-                    android:text="\n[Warning 2!] \nIf the number of rotations is even, go back to Step 1 and choose different value of 'k'"/>
+                    android:text="\n[Warning 2!] \nIf the number of rotations is odd, go back to Step 1 and choose different value of 'k'"/>
                 <TextView
                     android:id="@+id/Shor2point3"
                     android:layout_width="match_parent"

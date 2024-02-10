@@ -52,6 +52,7 @@ public class shorFragment1 extends Fragment {
 
     TextView conclusion1,conclusion2, conclusion3, conclusion4, conclusion5, conclusion6;
     TextView rotation1, remainder1, rotation2, remainder2, rotation3, remainder3, rotationBeforeLast, remainderBeforeLast, rotationLast, remainderLast;
+    int int_rotation1, int_remainder1, int_rotation2, int_remainder2, int_rotation3, int_remainder3, int_rotationBeforeLast, int_remainderBeforeLast, int_rotationLast, int_remainderLast, int_remainderBeforeBeforeLast;
     String defaultShor3point2, defaultShor3point3, defaultShor4point3, defaultShor4point4;
     List<Integer> answer = new ArrayList<>();
 
@@ -93,6 +94,7 @@ public class shorFragment1 extends Fragment {
                     composite_int = chosenNumber1 * chosenNumber2;
                     Composite.setText(String.valueOf(composite_int));
                     ShorStep1Explanation.setText("Randomly choose an integer (k) between 1 and " + composite_int);
+                    setHideAll();
                     setShowStep1();
                 }
             }
@@ -108,6 +110,7 @@ public class shorFragment1 extends Fragment {
                     composite_int = chosenNumber1 * chosenNumber2;
                     Composite.setText(String.valueOf(composite_int));
                     ShorStep1Explanation.setText("Randomly choose an integer (k) between 1 and " + composite_int);
+                    setHideAll();
                     setShowStep1();
                 }
             }
@@ -131,7 +134,13 @@ public class shorFragment1 extends Fragment {
                 setHideStep4();
                 setHideConclusion();
                 warning0.setVisibility(View.GONE);
-                numberInput = Integer.parseInt(s.toString().trim());
+                if(s.toString().trim().matches("[0-9]+") && s.toString().trim().length() > 1) {
+                    numberInput = Integer.parseInt(s.toString().trim());
+                }
+                else {
+                    numberInput = 1;
+                }
+
 
                 if (s.length()>0 && numberInput >= composite_int) {
                     SelectRandomK.setText(String.valueOf(composite_int-1));
@@ -352,6 +361,7 @@ public class shorFragment1 extends Fragment {
         Shor2point2.setVisibility(View.GONE);
         warning2.setVisibility(View.GONE);
         Shor2point3.setVisibility(View.GONE);
+        Step2CounterWarning.setVisibility(View.GONE);
 
         Shor3point1.setVisibility(View.GONE);
         ShorStep3.setVisibility(View.GONE);
@@ -378,6 +388,8 @@ public class shorFragment1 extends Fragment {
         conclusion6.setVisibility(View.GONE);
         ShorToHome2.setVisibility(View.GONE);
         warning0.setVisibility(View.GONE);
+
+        numberInput = 1;
 
     }
     public void setHideStep1() {
@@ -442,24 +454,7 @@ public class shorFragment1 extends Fragment {
     int q_value, repeating_rounds, latest_remainder;
 
     public void step2() {
-        q_value = 1;
-        latest_remainder = 0;
-        repeating_rounds = 0;
-        while (latest_remainder != 1) {
-            latest_remainder = (q_value*numberInput)%composite_int;
-            q_value = latest_remainder;
-            repeating_rounds++;
-        }
-        if (latest_remainder == 1) {
-            if (repeating_rounds%2 == 0) {
-                warning2.setVisibility(View.VISIBLE);
-            }
-            else {
-                Step2CounterWarning.setVisibility(View.VISIBLE);
-                setShowStep3();
-                step3();
-            }
-        }
+        calculatingAllValues();
     }
 
     int p_position, p_repeat, the_remainder;
@@ -495,5 +490,123 @@ public class shorFragment1 extends Fragment {
         setShowConclusion();
     }
 
+    public void calculatingAllValues(){
+        answer.clear();
+        q_value = 1;
+        latest_remainder = 0;
+        repeating_rounds = 0;
+
+        int_remainder1 = 0;
+        int_remainder2 = 0;
+        int_remainder3 = 0;
+        int_remainderBeforeBeforeLast = 0;
+        int_remainderBeforeLast = 0;
+        int_remainderLast = 0;
+
+        while (latest_remainder != 1) {
+            latest_remainder = (q_value*numberInput)%composite_int;
+            if (repeating_rounds == 0){
+                rotation1.setText("("+q_value+"*"+numberInput+") % "+composite_int);
+            }
+            if (repeating_rounds == 1) {
+                rotation2.setText("("+q_value+"*"+numberInput+") % "+composite_int);
+            }
+            if (repeating_rounds == 2) {
+                rotation3.setText("("+q_value+"*"+numberInput+") % "+composite_int);
+            }
+            q_value = latest_remainder;
+            repeating_rounds++;
+            answer.add(q_value);
+
+
+        }
+        if (latest_remainder == 1 && repeating_rounds > 1) {
+
+            if (repeating_rounds%2 != 0) {
+                warning2.setVisibility(View.VISIBLE);
+            }
+            else {
+                Step2CounterWarning.setVisibility(View.VISIBLE);
+                setShowStep3();
+                step3();
+            }
+        }
+
+
+        if (answer.size() == 1) {
+            int_remainder1 = answer.get(0);
+        }
+        else if (answer.size() == 2) {
+            int_remainder1 = answer.get(0);
+            int_remainder2 = answer.get(1);
+            rotation1.setText("1");
+            rotation2.setText("2");
+        }
+        else if (answer.size() == 3) {
+            int_remainder1 = answer.get(0);
+            int_remainder2 = answer.get(1);
+            int_remainder3 = answer.get(2);
+        }
+        else if (answer.size() == 4) {
+            int_remainder1 = answer.get(0);
+            int_remainder2 = answer.get(1);
+            int_remainder3 = answer.get(2);
+            int_remainderLast = answer.get(3);
+            rotationLast.setText("("+int_remainder3+"*"+numberInput+") % "+composite_int);
+        }
+        else if (answer.size() > 4) {
+            int_remainder1 = answer.get(0);
+            int_remainder2 = answer.get(1);
+            int_remainder3 = answer.get(2);
+            int_remainderBeforeLast = answer.get(answer.size()-2);
+            int_remainderLast = answer.get(answer.size()-1);
+            rotationLast.setText("("+int_remainderBeforeLast+"*"+numberInput+") % "+composite_int);
+            if (answer.size() > 5) {
+                int_remainderBeforeBeforeLast = answer.get(answer.size()-3);
+                rotationBeforeLast.setText(("("+int_remainderBeforeBeforeLast+"*"+numberInput+") % "+composite_int));
+            }
+            else if (answer.size() == 5) {
+                rotationBeforeLast.setText(("("+int_remainder3+"*"+numberInput+") % "+composite_int));
+            }
+        }
+
+        if (int_remainder1 != 0) {
+            remainder1.setText(String.valueOf(int_remainder1));
+        }
+        else {
+            remainder1.setText("-");
+        }
+
+        if (int_remainder2 != 0) {
+            remainder2.setText(String.valueOf(int_remainder2));
+        }
+        else {
+            remainder2.setText("-");
+        }
+
+        if (int_remainder3 != 0) {
+            remainder3.setText(String.valueOf(int_remainder3));
+        }
+        else {
+            remainder3.setText("-");
+        }
+
+        if (int_remainderBeforeLast != 0) {
+            remainderBeforeLast.setText(String.valueOf(int_remainderBeforeLast));
+        }
+        else {
+            remainderBeforeLast.setText("-");
+        }
+
+        if (int_remainderLast != 0) {
+            remainderLast.setText(String.valueOf(int_remainderLast));
+        }
+        else {
+            remainderLast.setText("-");
+        }
+
+
+
+    }
 
 }
