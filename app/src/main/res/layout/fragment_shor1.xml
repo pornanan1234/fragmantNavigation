@@ -476,6 +476,36 @@
                             android:layout_gravity="center"
                             android:textColor="@color/white"
                             android:text="..."/>
+                   </TableRow>
+
+                    <TableRow android:layout_width="match_parent">
+
+                        <TextView
+                            android:id="@+id/rotation_mid"
+                            android:padding="10dp"
+                            android:fontFamily="monospace"
+                            android:textColor="@color/white"
+                            android:text="no mid value"/>
+
+                        <TextView
+                            android:padding="10dp"
+                            android:fontFamily="monospace"
+                            android:textColor="@color/white"
+                            android:text="="/>
+
+                        <TextView
+                            android:id="@+id/remainder_middle"
+                            android:padding="10dp"
+                            android:fontFamily="monospace"
+                            android:textColor="@color/white"
+                            android:text="no mid"/>
+
+                        <TextView
+                            android:id="@+id/countmid"
+                            android:padding="10dp"
+                            android:fontFamily="@font/baloo_bhai_2_semibold"
+                            android:textColor="@color/light_red"
+                            android:text="--- M"/>
 
 
                     </TableRow>

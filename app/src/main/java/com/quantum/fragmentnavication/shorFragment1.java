@@ -51,8 +51,8 @@ public class shorFragment1 extends Fragment {
     TableLayout tableLayout;
 
     TextView conclusion1,conclusion2, conclusion3, conclusion4, conclusion5, conclusion6;
-    TextView rotation1, remainder1, rotation2, remainder2, rotation3, remainder3, rotationBeforeLast, remainderBeforeLast, rotationLast, remainderLast;
-    int int_rotation1, int_remainder1, int_rotation2, int_remainder2, int_rotation3, int_remainder3, int_rotationBeforeLast, int_remainderBeforeLast, int_rotationLast, int_remainderLast, int_remainderBeforeBeforeLast;
+    TextView rotation1, remainder1, rotation2, remainder2, rotation3, remainder3, rotationBeforeLast, remainderBeforeLast, rotationLast, remainderLast, rotation_mid, remainder_middle, count_mid, countbfl, countlast;
+    int int_rotation1, int_remainder1, int_rotation2, int_remainder2, int_rotation3, int_remainder3, int_rotationBeforeLast, int_remainderBeforeLast, int_rotationLast, int_remainderLast, int_remainderBeforeBeforeLast, int_remainder_middle;
     String defaultShor3point2, defaultShor3point3, defaultShor4point3, defaultShor4point4;
     List<Integer> answer = new ArrayList<>();
 
@@ -177,7 +177,10 @@ public class shorFragment1 extends Fragment {
                     public void onClick(View view) {
                         LaunchIntroFragment();
                     }
+
                 });
+
+
 
         ShorToHome2.setOnClickListener(
                 new View.OnClickListener() {
@@ -186,7 +189,6 @@ public class shorFragment1 extends Fragment {
                         LaunchIntroFragment();
                     }
                 });
-
 
         return null;
     }
@@ -282,6 +284,11 @@ public class shorFragment1 extends Fragment {
         remainderBeforeLast = (TextView) view.findViewById(R.id.remainderBeforeLast);
         rotationLast = (TextView) view.findViewById(R.id.rotationLast);
         remainderLast = (TextView) view.findViewById(R.id.remainderLast);
+        rotation_mid = (TextView) view.findViewById(R.id.rotation_mid);
+        remainder_middle = (TextView) view.findViewById(R.id.remainder_middle);
+        count_mid = (TextView) view.findViewById(R.id.countmid);
+        countbfl = (TextView) view.findViewById(R.id.countbfl);
+        countlast = (TextView) view.findViewById(R.id.countlast);
 
         conclusion1 = (TextView) view.findViewById(R.id.conclusion1);
         conclusion2 = (TextView) view.findViewById(R.id.conclusion2);
@@ -490,6 +497,8 @@ public class shorFragment1 extends Fragment {
         setShowConclusion();
     }
 
+    int int_beforemiddle;
+
     public void calculatingAllValues(){
         answer.clear();
         q_value = 1;
@@ -502,6 +511,10 @@ public class shorFragment1 extends Fragment {
         int_remainderBeforeBeforeLast = 0;
         int_remainderBeforeLast = 0;
         int_remainderLast = 0;
+        int_beforemiddle = 0;
+        int_remainder_middle = 0;
+        warning2.setVisibility(view.GONE);
+        Step2CounterWarning.setVisibility(view.GONE);
 
         while (latest_remainder != 1) {
             latest_remainder = (q_value*numberInput)%composite_int;
@@ -553,6 +566,7 @@ public class shorFragment1 extends Fragment {
             int_remainder3 = answer.get(2);
             int_remainderLast = answer.get(3);
             rotationLast.setText("("+int_remainder3+"*"+numberInput+") % "+composite_int);
+            countlast.setText("--- "+(answer.size()));
         }
         else if (answer.size() > 4) {
             int_remainder1 = answer.get(0);
@@ -568,6 +582,8 @@ public class shorFragment1 extends Fragment {
             else if (answer.size() == 5) {
                 rotationBeforeLast.setText(("("+int_remainder3+"*"+numberInput+") % "+composite_int));
             }
+            countbfl.setText("--- "+ (answer.size()-1));
+            countlast.setText("--- "+ (answer.size()));
         }
 
         if (int_remainder1 != 0) {
@@ -605,6 +621,14 @@ public class shorFragment1 extends Fragment {
             remainderLast.setText("-");
         }
 
+
+        if (repeating_rounds%2 == 0){
+            int_beforemiddle = answer.get((answer.size()/2)-2);
+            rotation_mid.setText("("+int_beforemiddle+"*"+numberInput+") % "+composite_int);
+            int_remainder_middle = answer.get((answer.size()/2)-1);
+            remainder_middle.setText(String.valueOf(int_remainder_middle));
+            count_mid.setText("--- "+((answer.size()/2)));
+        }
 
 
     }
