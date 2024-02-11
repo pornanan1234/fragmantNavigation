@@ -115,11 +115,20 @@ public class DefendFragment1 extends Fragment {
     Boolean isAllFabsVisible;
     ImageView imageView;
 
-    private void replaceFragment(Fragment fragment) {
+    private void replaceFragment(Fragment fragment){
 
         FragmentManager fragmentManager = getParentFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout, fragment);
+        fragmentTransaction.replace(R.id.frameLayout,fragment);
+        fragmentTransaction.commit();
+    }
+
+    private void replaceFragment(Fragment fragment, String Tag){
+
+        FragmentManager fragmentManager = getParentFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.replace(R.id.frameLayout,fragment, Tag);
         fragmentTransaction.commit();
     }
 
@@ -195,7 +204,16 @@ public class DefendFragment1 extends Fragment {
     }
 
     public void LaunchShorFragment() {
-        replaceFragment(new shorFragment1());
+        FragmentManager fragmentManager = getParentFragmentManager();
+        Fragment f = fragmentManager.findFragmentByTag("ShorFragment");
+        if (f == null) {
+            replaceFragment(new shorFragment1(), "ShorFragment");
+        }
+        else {
+            replaceFragment(f, "ShorFragment");
+        }
+
+
     }
 
     public void LaunchIntroFragment() {

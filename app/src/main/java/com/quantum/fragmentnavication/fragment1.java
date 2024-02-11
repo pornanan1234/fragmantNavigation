@@ -93,7 +93,15 @@ public class fragment1 extends Fragment {
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment(new fragment2());
+                FragmentManager fragmentManager = getParentFragmentManager();
+                Fragment f = fragmentManager.findFragmentByTag("IntroFragment2");
+                if (f == null) {
+                    replaceFragment(new fragment2(), "IntroFragment2");
+                }
+                else {
+                    replaceFragment(f);
+                }
+
             }
         });
 
@@ -120,6 +128,19 @@ public class fragment1 extends Fragment {
         FragmentManager fragmentManager = getParentFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frameLayout,fragment);
+        Fragment f = fragmentManager.findFragmentByTag("IntroFragment");
+        fragmentTransaction.remove(f);
+        fragmentTransaction.commit();
+    }
+
+    private void replaceFragment(Fragment fragment, String Tag){
+
+        FragmentManager fragmentManager = getParentFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.replace(R.id.frameLayout,fragment, Tag);
+        Fragment f = fragmentManager.findFragmentByTag("IntroFragment");
+        fragmentTransaction.remove(f);
         fragmentTransaction.commit();
     }
 
@@ -195,7 +216,16 @@ public class fragment1 extends Fragment {
 
 
     public void LaunchShorFragment() {
-        replaceFragment(new shorFragment1());
+        FragmentManager fragmentManager = getParentFragmentManager();
+        Fragment f = fragmentManager.findFragmentByTag("ShorFragment");
+        if (f == null) {
+            replaceFragment(new shorFragment1(), "ShorFragment");
+        }
+        else {
+            replaceFragment(f);
+        }
+
+
     }
     public void LaunchIntroFragment() {
         replaceFragment(new fragment1());

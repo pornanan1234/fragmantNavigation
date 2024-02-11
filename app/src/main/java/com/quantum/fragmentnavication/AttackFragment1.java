@@ -124,6 +124,15 @@ public class AttackFragment1 extends Fragment {
         fragmentTransaction.commit();
     }
 
+    private void replaceFragment(Fragment fragment, String Tag){
+
+        FragmentManager fragmentManager = getParentFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.replace(R.id.frameLayout,fragment, Tag);
+        fragmentTransaction.commit();
+    }
+
     private void setHideFab(){
         mAddFab = view.findViewById(R.id.add_fab);
         backToHome = view.findViewById(R.id.direct_to_home_fab);
@@ -200,7 +209,16 @@ public class AttackFragment1 extends Fragment {
     }
 
     public void LaunchShorFragment() {
-        replaceFragment(new shorFragment1());
+        FragmentManager fragmentManager = getParentFragmentManager();
+        Fragment f = fragmentManager.findFragmentByTag("ShorFragment");
+        if (f == null) {
+            replaceFragment(new shorFragment1(), "ShorFragment");
+        }
+        else {
+            replaceFragment(f, "ShorFragment");
+        }
+
+
     }
     public void LaunchIntroFragment() {
         replaceFragment(new fragment1());

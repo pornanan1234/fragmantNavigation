@@ -4,6 +4,7 @@ import static java.lang.Integer.parseInt;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
+import android.nfc.Tag;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -32,7 +33,7 @@ public class shorFragment1 extends Fragment {
 
     Context context;
 
-    int chosenNumber1, chosenNumber2, q, r, k, p, newq, key1, key2;
+    int chosenNumber1, chosenNumber2;
 
 
 
@@ -90,7 +91,7 @@ public class shorFragment1 extends Fragment {
                 //hideAll();
                 chosenNumber1 = parseInt(primeNumbers[newVal]);
                 selectPrimeNumber1.setText("Select Your First Prime Number: " + primeNumbers[newVal]);
-                if (chosenNumber1 != 0 && chosenNumber2 != 0){
+                if (chosenNumber1 != 0 && chosenNumber2 != 0) {
                     composite_int = chosenNumber1 * chosenNumber2;
                     Composite.setText(String.valueOf(composite_int));
                     ShorStep1Explanation.setText("Randomly choose an integer (k) between 1 and " + composite_int);
@@ -106,7 +107,7 @@ public class shorFragment1 extends Fragment {
                 //hideAll();
                 chosenNumber2 = parseInt(primeNumbers[newVal]);
                 selectPrimeNumber2.setText("Select Your Second Prime Number: " + primeNumbers[newVal]);
-                if (chosenNumber1 != 0 && chosenNumber2 != 0){
+                if (chosenNumber1 != 0 && chosenNumber2 != 0) {
                     composite_int = chosenNumber1 * chosenNumber2;
                     Composite.setText(String.valueOf(composite_int));
                     ShorStep1Explanation.setText("Randomly choose an integer (k) between 1 and " + composite_int);
@@ -134,23 +135,20 @@ public class shorFragment1 extends Fragment {
                 setHideStep4();
                 setHideConclusion();
                 warning0.setVisibility(View.GONE);
-                if(s.toString().trim().matches("[0-9]+") && s.toString().trim().length() > 1) {
+                if (s.toString().trim().matches("[0-9]+") && s.toString().trim().length() > 1) {
                     numberInput = Integer.parseInt(s.toString().trim());
-                }
-                else {
+                } else {
                     numberInput = 1;
                 }
 
 
-                if (s.length()>0 && numberInput >= composite_int) {
-                    SelectRandomK.setText(String.valueOf(composite_int-1));
-                }
-                else if (gcd(numberInput, composite_int) != 1) {
+                if (s.length() > 0 && numberInput >= composite_int) {
+                    SelectRandomK.setText(String.valueOf(composite_int - 1));
+                } else if (gcd(numberInput, composite_int) != 1) {
                     warning0.setVisibility(View.VISIBLE);
                     GCD.setVisibility(View.VISIBLE);
                     GCD.setText("GCD = " + gcd(numberInput, composite_int));
-                }
-                else if (gcd(numberInput, composite_int) == 1) {
+                } else if (gcd(numberInput, composite_int) == 1) {
                     GCD.setVisibility(View.VISIBLE);
                     GCD.setText("GCD = " + gcd(numberInput, composite_int));
                     ShorStep1Explanation2.setVisibility(View.VISIBLE);
@@ -160,25 +158,22 @@ public class shorFragment1 extends Fragment {
                 }
 
 
-
             }
         });
-
-
-
-
-
-
 
 
         ShorToHome1.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+
                         LaunchIntroFragment();
+
                     }
 
                 });
+
+
 
 
 
@@ -187,6 +182,7 @@ public class shorFragment1 extends Fragment {
                     @Override
                     public void onClick(View view) {
                         LaunchIntroFragment();
+
                     }
                 });
 
@@ -201,17 +197,38 @@ public class shorFragment1 extends Fragment {
 
         FragmentManager fragmentManager = getParentFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout,fragment);
+
+
+        fragmentTransaction.add(R.id.frameLayout,fragment);
+        fragmentTransaction.commit();
+    }
+
+    private void replaceFragment(Fragment fragment, String Tag){
+
+        FragmentManager fragmentManager = getParentFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+
+        fragmentTransaction.add(R.id.frameLayout,fragment, Tag);
         fragmentTransaction.commit();
     }
 
 
 
     public void LaunchShorFragment() {
-        replaceFragment(new shorFragment1());
+        replaceFragment(new shorFragment1(), "ShorFragment");
     }
     public void LaunchIntroFragment() {
-        replaceFragment(new fragment1());
+        FragmentManager fragmentManager = getParentFragmentManager();
+        Fragment f = fragmentManager.findFragmentByTag("IntroFragment");
+        if (f == null) {
+            replaceFragment(new fragment1(), "IntroFragment");
+        }
+        else {
+            replaceFragment(f);
+        }
+
+
     }
 
     public void loadObject() {

@@ -126,6 +126,19 @@ public class fragment2 extends Fragment {
         FragmentManager fragmentManager = getParentFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frameLayout,fragment);
+        Fragment f = fragmentManager.findFragmentByTag("IntroFragment2");
+        fragmentTransaction.remove(f);
+        fragmentTransaction.commit();
+    }
+
+    private void replaceFragment(Fragment fragment, String Tag){
+
+        FragmentManager fragmentManager = getParentFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        Fragment f = fragmentManager.findFragmentByTag("IntroFragment2");
+
+        fragmentTransaction.replace(R.id.frameLayout,fragment, Tag);
+        fragmentTransaction.remove(f);
         fragmentTransaction.commit();
     }
 
@@ -205,7 +218,16 @@ public class fragment2 extends Fragment {
     }
 
     public void LaunchShorFragment() {
-        replaceFragment(new shorFragment1());
+        FragmentManager fragmentManager = getParentFragmentManager();
+        Fragment f = fragmentManager.findFragmentByTag("ShorFragment");
+        if (f == null) {
+            replaceFragment(new shorFragment1(), "ShorFragment");
+        }
+        else {
+            replaceFragment(f);
+        }
+
+
     }
     public void LaunchIntroFragment() {
         replaceFragment(new fragment1());
