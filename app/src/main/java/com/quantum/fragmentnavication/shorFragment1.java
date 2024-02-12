@@ -3,6 +3,7 @@ package com.quantum.fragmentnavication;
 import static java.lang.Integer.parseInt;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.nfc.Tag;
 import android.os.Bundle;
@@ -219,15 +220,9 @@ public class shorFragment1 extends Fragment {
         replaceFragment(new shorFragment1(), "ShorFragment");
     }
     public void LaunchIntroFragment() {
-        FragmentManager fragmentManager = getParentFragmentManager();
-        Fragment f = fragmentManager.findFragmentByTag("IntroFragment");
-        if (f == null) {
-            replaceFragment(new fragment1(), "IntroFragment");
-        }
-        else {
-            replaceFragment(f);
-        }
 
+        Intent myIntent = new Intent(getActivity(), MainActivity.class);
+        startActivity(myIntent);
 
     }
 

@@ -1,5 +1,6 @@
 package com.quantum.fragmentnavication;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -210,14 +211,9 @@ public class DefendFragment2 extends Fragment {
     }
 
     public void LaunchShorFragment() {
-        FragmentManager fragmentManager = getParentFragmentManager();
-        Fragment f = fragmentManager.findFragmentByTag("ShorFragment");
-        if (f == null) {
-            replaceFragment(new shorFragment1(), "ShorFragment");
-        }
-        else {
-            replaceFragment(f, "ShorFragment");
-        }
+        Intent myIntent = new Intent(getActivity(), shorActivity.class);
+        startActivity(myIntent);
+
 
 
     }
