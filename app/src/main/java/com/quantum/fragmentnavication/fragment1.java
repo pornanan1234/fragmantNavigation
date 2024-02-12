@@ -66,6 +66,13 @@ public class fragment1 extends Fragment {
             }
         });
 
+        DirectToAttackActionText.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LaunchAttackFragment();
+            }
+        });
+
         goToDefense.setOnClickListener(
         new View.OnClickListener() {
             @Override
@@ -73,6 +80,15 @@ public class fragment1 extends Fragment {
                 LaunchDefendFragment();
             }
         });
+
+        DirectToDefenseActionText.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        LaunchDefendFragment();
+                    }
+                });
+
         backToHome.setOnClickListener(
         new View.OnClickListener() {
             @Override
@@ -80,6 +96,13 @@ public class fragment1 extends Fragment {
                 LaunchIntroFragment();
             }
         });
+        directToHomeActionText.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        LaunchIntroFragment();
+                    }
+                });
 
         goToShor.setOnClickListener(
                 new View.OnClickListener() {
@@ -90,6 +113,13 @@ public class fragment1 extends Fragment {
                     }
                 });
 
+        DirectToShorActionText.setOnClickListener(  new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LaunchShorFragment();
+
+            }
+        });
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override

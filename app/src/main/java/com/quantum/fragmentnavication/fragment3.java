@@ -57,26 +57,58 @@ public class fragment3 extends Fragment {
                     }
                 });
 
+        DirectToAttackActionText.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LaunchAttackFragment();
+            }
+        });
+
         goToDefense.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                    LaunchDefendFragment();
+                        LaunchDefendFragment();
                     }
                 });
+
+        DirectToDefenseActionText.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        LaunchDefendFragment();
+                    }
+                });
+
         backToHome.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
+                        LaunchIntroFragment();
+                    }
+                });
+        directToHomeActionText.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
                         LaunchIntroFragment();
                     }
                 });
 
-        goToShor.setOnClickListener(new View.OnClickListener(){
+        goToShor.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        LaunchShorFragment();
+
+                    }
+                });
+
+        DirectToShorActionText.setOnClickListener(  new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 LaunchShorFragment();
+
             }
         });
 

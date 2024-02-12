@@ -77,6 +77,35 @@ public class AttackFragment4 extends Fragment {
             }
         });
 
+        directToHomeActionText.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        LaunchIntroFragment();
+                    }
+                });
+        DirectToShorActionText.setOnClickListener(  new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LaunchShorFragment();
+
+            }
+        });
+        DirectToDefenseActionText.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        LaunchDefendFragment();
+                    }
+                });
+        DirectToAttackActionText.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LaunchAttackFragment();
+            }
+        });
+
+
         view.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {

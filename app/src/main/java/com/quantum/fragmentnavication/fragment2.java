@@ -55,6 +55,13 @@ public class fragment2 extends Fragment {
                     }
                 });
 
+        DirectToAttackActionText.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LaunchAttackFragment();
+            }
+        });
+
         goToDefense.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -62,22 +69,46 @@ public class fragment2 extends Fragment {
                         LaunchDefendFragment();
                     }
                 });
+
+        DirectToDefenseActionText.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        LaunchDefendFragment();
+                    }
+                });
+
         backToHome.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
+                        LaunchIntroFragment();
+                    }
+                });
+        directToHomeActionText.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
                         LaunchIntroFragment();
                     }
                 });
 
-        goToShor.setOnClickListener(new View.OnClickListener(){
+        goToShor.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        LaunchShorFragment();
+
+                    }
+                });
+
+        DirectToShorActionText.setOnClickListener(  new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 LaunchShorFragment();
+
             }
         });
-
 
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
