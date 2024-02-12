@@ -193,32 +193,6 @@ public class shorFragment1 extends Fragment {
 
 
 
-
-    private void replaceFragment(Fragment fragment){
-
-        FragmentManager fragmentManager = getParentFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-
-        fragmentTransaction.add(R.id.frameLayout,fragment);
-        fragmentTransaction.commit();
-    }
-
-    private void replaceFragment(Fragment fragment, String Tag){
-
-        FragmentManager fragmentManager = getParentFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-
-        fragmentTransaction.add(R.id.frameLayout,fragment, Tag);
-        fragmentTransaction.commit();
-    }
-
-
-
-    public void LaunchShorFragment() {
-        replaceFragment(new shorFragment1(), "ShorFragment");
-    }
     public void LaunchIntroFragment() {
 
         Intent myIntent = new Intent(getActivity(), MainActivity.class);

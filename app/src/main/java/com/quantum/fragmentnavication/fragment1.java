@@ -94,15 +94,7 @@ public class fragment1 extends Fragment {
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager fragmentManager = getParentFragmentManager();
-                Fragment f = fragmentManager.findFragmentByTag("IntroFragment2");
-                if (f == null) {
-                    replaceFragment(new fragment2(), "IntroFragment2");
-                }
-                else {
-                    replaceFragment(f);
-                }
-
+                    replaceFragment(new fragment2());
             }
         });
 
@@ -134,16 +126,6 @@ public class fragment1 extends Fragment {
         fragmentTransaction.commit();
     }
 
-    private void replaceFragment(Fragment fragment, String Tag){
-
-        FragmentManager fragmentManager = getParentFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-        fragmentTransaction.replace(R.id.frameLayout,fragment, Tag);
-        Fragment f = fragmentManager.findFragmentByTag("IntroFragment");
-        fragmentTransaction.remove(f);
-        fragmentTransaction.commit();
-    }
 
     private void setHideFab(){
         mAddFab = view.findViewById(R.id.add_fab);

@@ -126,15 +126,6 @@ public class DefendFragment2 extends Fragment {
         fragmentTransaction.commit();
     }
 
-    private void replaceFragment(Fragment fragment, String Tag){
-
-        FragmentManager fragmentManager = getParentFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-        fragmentTransaction.replace(R.id.frameLayout,fragment, Tag);
-        fragmentTransaction.commit();
-    }
-
 
     private void setHideFab(){
         mAddFab = view.findViewById(R.id.add_fab);
