@@ -36,7 +36,7 @@
         android:text="Usage in Attacker's Perspective"
         android:textAlignment="center"
         android:textColor="@color/light_red"
-        android:textSize="28sp"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
     <TextView
@@ -54,7 +54,7 @@
         android:text="RSA is an asymmetric encryption algorithm in which each user has two keys: public and private key. When sending information, the receiver’s public key is used by the sender to encrypt the message. When obtaining the information, the receiver will need to use his or her private key to decrypt the message. "
         android:textAlignment="center"
         android:textColor="@color/light_red"
-        android:textSize="18sp" />
+        android:textSize="16sp" />
 
 
 

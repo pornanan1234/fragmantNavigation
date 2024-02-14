@@ -27,7 +27,7 @@
         android:text="Usage in Attacker's Perspective"
         android:textAlignment="center"
         android:textColor="@color/light_red"
-        android:textSize="28sp"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
     <TextView

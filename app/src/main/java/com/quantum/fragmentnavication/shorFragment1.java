@@ -462,7 +462,7 @@ public class shorFragment1 extends Fragment {
         }
         if (the_remainder + 1 == composite_int) {
             warning3.setVisibility(View.VISIBLE);
-            Shor3point3.setText("\np + 1 = N"+"\n"+the_remainder+"+ 1 != "+composite_int );
+            Shor3point3.setText("\np + 1 = N"+"\n"+the_remainder+"+ 1 = "+composite_int );
         }
         else {
             Step3CounterWarning.setVisibility(View.VISIBLE);
@@ -505,13 +505,13 @@ public class shorFragment1 extends Fragment {
         while (latest_remainder != 1) {
             latest_remainder = (q_value*numberInput)%composite_int;
             if (repeating_rounds == 0){
-                rotation1.setText("("+q_value+"*"+numberInput+") % "+composite_int);
+                rotation1.setText("("+q_value+"*"+numberInput+")%"+composite_int);
             }
             if (repeating_rounds == 1) {
-                rotation2.setText("("+q_value+"*"+numberInput+") % "+composite_int);
+                rotation2.setText("("+q_value+"*"+numberInput+")%"+composite_int);
             }
             if (repeating_rounds == 2) {
-                rotation3.setText("("+q_value+"*"+numberInput+") % "+composite_int);
+                rotation3.setText("("+q_value+"*"+numberInput+")%"+composite_int);
             }
             q_value = latest_remainder;
             repeating_rounds++;
@@ -551,8 +551,8 @@ public class shorFragment1 extends Fragment {
             int_remainder2 = answer.get(1);
             int_remainder3 = answer.get(2);
             int_remainderLast = answer.get(3);
-            rotationLast.setText("("+int_remainder3+"*"+numberInput+") % "+composite_int);
-            countlast.setText("--- "+(answer.size()));
+            rotationLast.setText("("+int_remainder3+"*"+numberInput+")%"+composite_int);
+            countlast.setText(String.valueOf(answer.size()));
         }
         else if (answer.size() > 4) {
             int_remainder1 = answer.get(0);
@@ -560,16 +560,16 @@ public class shorFragment1 extends Fragment {
             int_remainder3 = answer.get(2);
             int_remainderBeforeLast = answer.get(answer.size()-2);
             int_remainderLast = answer.get(answer.size()-1);
-            rotationLast.setText("("+int_remainderBeforeLast+"*"+numberInput+") % "+composite_int);
+            rotationLast.setText("("+int_remainderBeforeLast+"*"+numberInput+")%"+composite_int);
             if (answer.size() > 5) {
                 int_remainderBeforeBeforeLast = answer.get(answer.size()-3);
-                rotationBeforeLast.setText(("("+int_remainderBeforeBeforeLast+"*"+numberInput+") % "+composite_int));
+                rotationBeforeLast.setText(("("+int_remainderBeforeBeforeLast+"*"+numberInput+")%"+composite_int));
             }
             else if (answer.size() == 5) {
-                rotationBeforeLast.setText(("("+int_remainder3+"*"+numberInput+") % "+composite_int));
+                rotationBeforeLast.setText(("("+int_remainder3+"*"+numberInput+")%"+composite_int));
             }
-            countbfl.setText("--- "+ (answer.size()-1));
-            countlast.setText("--- "+ (answer.size()));
+            countbfl.setText(String.valueOf(answer.size()-1));
+            countlast.setText(String.valueOf(answer.size()));
         }
 
         if (int_remainder1 != 0) {
@@ -610,10 +610,10 @@ public class shorFragment1 extends Fragment {
 
         if (repeating_rounds%2 == 0){
             int_beforemiddle = answer.get((answer.size()/2)-2);
-            rotation_mid.setText("("+int_beforemiddle+"*"+numberInput+") % "+composite_int);
+            rotation_mid.setText("("+int_beforemiddle+"*"+numberInput+")%"+composite_int);
             int_remainder_middle = answer.get((answer.size()/2)-1);
             remainder_middle.setText(String.valueOf(int_remainder_middle));
-            count_mid.setText("--- "+((answer.size()/2)));
+            count_mid.setText(String.valueOf(answer.size()/2));
         }
 
 

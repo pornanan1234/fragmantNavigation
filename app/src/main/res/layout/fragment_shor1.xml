@@ -196,7 +196,7 @@
                     android:textSize="20sp"
                     android:layout_gravity="center"
                     android:fontFamily="@font/baloo_bhai_2_semibold"
-                    android:text="\n---------------------------------------\n"/>
+                    android:text="\n----------------------------------\n"/>
 
                 <TextView
                     android:id="@+id/ShorStep1"
@@ -271,7 +271,7 @@
                     android:textSize="20sp"
                     android:layout_gravity="center"
                     android:fontFamily="@font/baloo_bhai_2_semibold"
-                    android:text="\n---------------------------------------\n"/>
+                    android:text="\n----------------------------------\n"/>
 
 
                 <TextView
@@ -352,7 +352,7 @@
                             android:fontFamily="@font/baloo_bhai_2_semibold"
                             android:textColor="@color/blue"
                             android:layout_gravity="center"
-                            android:text="Remainder"/>
+                            android:text="r"/>
 
                         <TextView
                             android:padding="10dp"
@@ -392,7 +392,7 @@
                             android:padding="10dp"
                             android:fontFamily="@font/baloo_bhai_2_semibold"
                             android:textColor="@color/light_red"
-                            android:text="--- 1"/>
+                            android:text="1"/>
 
 
 
@@ -424,7 +424,7 @@
                             android:padding="10dp"
                             android:fontFamily="@font/baloo_bhai_2_semibold"
                             android:textColor="@color/light_red"
-                            android:text="--- 2"/>
+                            android:text="2"/>
                     </TableRow>
                     <TableRow android:layout_width="match_parent">
 
@@ -453,7 +453,7 @@
                             android:padding="10dp"
                             android:fontFamily="@font/baloo_bhai_2_semibold"
                             android:textColor="@color/light_red"
-                            android:text="--- 3"/>
+                            android:text="3"/>
                     </TableRow>
                     <TableRow android:layout_width="match_parent">
 
@@ -505,7 +505,7 @@
                             android:padding="10dp"
                             android:fontFamily="@font/baloo_bhai_2_semibold"
                             android:textColor="@color/light_red"
-                            android:text="--- M"/>
+                            android:text="M"/>
 
 
                     </TableRow>
@@ -560,7 +560,7 @@
                             android:padding="10dp"
                             android:fontFamily="@font/baloo_bhai_2_semibold"
                             android:textColor="@color/light_red"
-                            android:text="--- B"/>
+                            android:text="B"/>
                     </TableRow>
                     <TableRow android:layout_width="match_parent">
 
@@ -589,7 +589,7 @@
                             android:padding="10dp"
                             android:fontFamily="@font/baloo_bhai_2_semibold"
                             android:textColor="@color/light_red"
-                            android:text="--- L"/>
+                            android:text="L"/>
                     </TableRow>
 
 
@@ -637,7 +637,7 @@
                     android:textSize="20sp"
                     android:layout_gravity="center"
                     android:fontFamily="@font/baloo_bhai_2_semibold"
-                    android:text="\n---------------------------------------\n"/>
+                    android:text="\n----------------------------------\n"/>
 
 
                 <TextView
@@ -714,7 +714,7 @@
                     android:textSize="20sp"
                     android:layout_gravity="center"
                     android:fontFamily="@font/baloo_bhai_2_semibold"
-                    android:text="\n---------------------------------------\n"/>
+                    android:text="\n----------------------------------\n"/>
 
 
                 <TextView
@@ -801,7 +801,7 @@
                     android:textSize="20sp"
                     android:layout_gravity="center"
                     android:fontFamily="@font/baloo_bhai_2_semibold"
-                    android:text="---------------------------------------\n"/>
+                    android:text="----------------------------------\n"/>
 
 
                 <TextView

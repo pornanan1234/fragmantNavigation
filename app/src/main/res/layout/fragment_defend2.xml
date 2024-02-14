@@ -31,12 +31,15 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_margin="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
         android:fontFamily="@font/baloo_bhai_2_extrabold"
         android:text="Usage in Defender's Perspective"
         android:textAlignment="center"
         android:textColor="@color/light_purple"
-        android:textSize="28sp"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
     <TextView
@@ -53,7 +56,7 @@
         android:gravity="center|center_horizontal|center_vertical"
         android:text="Suppose Alice is the sender, she will use photons to transmit keys through fiber optic wires. Each photons are 0 or 1 bits which goes through either a horizontal-vertical filter or a diagonal filter. \n\nUpon receiving the polarized photons, Bob (the receiver), needs to use a random beamsplitter to read the polarization of the photon. "     android:textAlignment="center"
         android:textColor="@color/light_purple"
-        android:textSize="17sp" />
+        android:textSize="15sp" />
 
 
 
