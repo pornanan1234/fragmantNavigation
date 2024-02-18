@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black"
+    android:backgroundTint="#000000"
+    android:backgroundTintMode="multiply"
+    tools:context="com.quantum.fragmentnavication.fragment1point2">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <include layout="@layout/floatbutton" />
+
+
+
+    <TextView
+        android:id="@+id/ApplicationText"
+        android:layout_width="262dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="24dp"
+        android:fontFamily="@font/baloo_bhai_2_extrabold"
+        android:text="Brief Introduction"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ApplicationText"
+        android:layout_above="@id/fragment1point2toNext"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/baloo_bhai_2"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="Small particles behave differently from an object on a larger scale. The Wave-Particle Duality Principle explains that extremely small particles display a combination of wave-like and particle-like behaviors. \n\n
+
+        Moreover, the properties (ex. position) of these particles can only be described probabilistically rather than deterministically using wavefunctions that could find the likelihood of the particles' characteristics in the current state. \n\n
+
+    The probability nature of quantum physics is the core of many concepts in this field, including the principles listed on the next pages. "
+
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="18sp"
+        />
+
+
+
+    <Button
+        android:id="@+id/fragment1point2toNext"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="57dp"
+        android:layout_marginBottom="40dp"
+        android:layout_x="250dp"
+        android:layout_y="665dp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:text="@string/next"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/fragment1point2toPrevious"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginRight="234dp"
+        android:layout_marginBottom="28dp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:text="@string/previous"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+
+
+</RelativeLayout>
+

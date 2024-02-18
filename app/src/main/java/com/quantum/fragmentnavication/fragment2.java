@@ -122,7 +122,7 @@ public class fragment2 extends Fragment {
         previousBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment(new fragment1());
+                replaceFragment(new fragment1point2());
             }
         });
 
