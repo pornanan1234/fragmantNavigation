@@ -151,8 +151,6 @@ public class fragment1 extends Fragment {
         FragmentManager fragmentManager = getParentFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frameLayout,fragment);
-        Fragment f = fragmentManager.findFragmentByTag("IntroFragment");
-        fragmentTransaction.remove(f);
         fragmentTransaction.commit();
     }
 
